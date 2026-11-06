@@ -1,0 +1,360 @@
+{
+  "version": 1,
+  "rulesVersion": "research-v1",
+  "generatedAt": "2026-11-06T18:35:01.070276+08:00",
+  "expectedTaiwanSession": "2026-11-06",
+  "scheduleText": "每週一至五 08:00 啟動更新",
+  "markets": [
+    {
+      "id": "taiex",
+      "symbol": "TAIEX",
+      "name": "台灣加權",
+      "en": "TAIWAN WEIGHTED",
+      "region": "tw",
+      "kind": "index",
+      "sourceUrl": "https://www.twse.com.tw/zh/indices/taiex/mi-5min-hist.html",
+      "sessionDate": "2026-11-05",
+      "close": 41574.72,
+      "changePct": -3.2,
+      "sparkline": [
+        44920.14,
+        43307.54,
+        42948.91,
+        41574.72
+      ],
+      "history": [
+        {
+          "date": "2026-11-02",
+          "close": 44920.14
+        },
+        {
+          "date": "2026-11-03",
+          "close": 43307.54
+        },
+        {
+          "date": "2026-11-04",
+          "close": 42948.91
+        },
+        {
+          "date": "2026-11-05",
+          "close": 41574.72
+        }
+      ],
+      "buyScore": null,
+      "sellScore": null,
+      "confirmed": false,
+      "leveraged": false,
+      "status": "stale",
+      "dataCount": 4,
+      "scoreStatus": "warming",
+      "reasons": [
+        "行情尚未更新至最近完整交易日"
+      ],
+      "details": [],
+      "cross": null,
+      "sourceName": "TWSE 開放資料",
+      "licenseNote": "政府資料開放授權條款第1版",
+      "dataSourceUrl": "https://openapi.twse.com.tw/",
+      "adjustment": "價格指數",
+      "expectedSession": "2026-11-06"
+    },
+    {
+      "id": "2330",
+      "symbol": "2330",
+      "name": "台積電",
+      "en": "TAIWAN SEMICONDUCTOR",
+      "region": "tw",
+      "kind": "stock",
+      "sourceUrl": "https://www.twse.com.tw/zh/trading/historical/stock-day.html",
+      "sessionDate": "2026-11-05",
+      "close": 2240.0,
+      "changePct": -0.88,
+      "sparkline": [
+        2240.0
+      ],
+      "history": [
+        {
+          "date": "2026-11-05",
+          "close": 2240.0
+        }
+      ],
+      "buyScore": null,
+      "sellScore": null,
+      "confirmed": false,
+      "leveraged": false,
+      "status": "stale",
+      "dataCount": 1,
+      "scoreStatus": "warming",
+      "reasons": [
+        "行情尚未更新至最近完整交易日"
+      ],
+      "details": [],
+      "cross": null,
+      "sourceName": "TWSE 開放資料",
+      "licenseNote": "政府資料開放授權條款第1版",
+      "dataSourceUrl": "https://openapi.twse.com.tw/",
+      "adjustment": "原始收盤價；調整待確認",
+      "expectedSession": "2026-11-06"
+    },
+    {
+      "id": "0050",
+      "symbol": "0050",
+      "name": "元大台灣50",
+      "en": "YUANTA TAIWAN 50",
+      "region": "tw",
+      "kind": "etf",
+      "sourceUrl": "https://www.yuantaetfs.com/product/detail/0050/Basic_information",
+      "sessionDate": "2026-11-05",
+      "close": 97.15,
+      "changePct": -2.7,
+      "sparkline": [
+        97.15
+      ],
+      "history": [
+        {
+          "date": "2026-11-05",
+          "close": 97.15
+        }
+      ],
+      "buyScore": null,
+      "sellScore": null,
+      "confirmed": false,
+      "leveraged": false,
+      "status": "stale",
+      "dataCount": 1,
+      "scoreStatus": "warming",
+      "reasons": [
+        "行情尚未更新至最近完整交易日"
+      ],
+      "details": [],
+      "cross": null,
+      "sourceName": "TWSE 開放資料",
+      "licenseNote": "政府資料開放授權條款第1版",
+      "dataSourceUrl": "https://openapi.twse.com.tw/",
+      "adjustment": "原始收盤價；調整待確認",
+      "expectedSession": "2026-11-06"
+    },
+    {
+      "id": "00631L",
+      "symbol": "00631L",
+      "name": "元大台灣50正2",
+      "en": "TAIWAN 50 · DAILY 2×",
+      "region": "tw",
+      "kind": "leveraged",
+      "sourceUrl": "https://www.yuantaetfs.com/product/detail/00631L/Basic_information",
+      "sessionDate": "2026-11-05",
+      "close": 29.21,
+      "changePct": -5.32,
+      "sparkline": [
+        29.21
+      ],
+      "history": [
+        {
+          "date": "2026-11-05",
+          "close": 29.21
+        }
+      ],
+      "buyScore": null,
+      "sellScore": null,
+      "confirmed": false,
+      "leveraged": true,
+      "status": "stale",
+      "dataCount": 1,
+      "scoreStatus": "warming",
+      "reasons": [
+        "行情尚未更新至最近完整交易日"
+      ],
+      "details": [],
+      "cross": null,
+      "sourceName": "TWSE 開放資料",
+      "licenseNote": "政府資料開放授權條款第1版",
+      "dataSourceUrl": "https://openapi.twse.com.tw/",
+      "adjustment": "原始收盤價；調整待確認",
+      "expectedSession": "2026-11-06"
+    },
+    {
+      "id": "00685L",
+      "symbol": "00685L",
+      "name": "群益臺灣加權正2",
+      "en": "TAIWAN WEIGHTED · DAILY 2×",
+      "region": "tw",
+      "kind": "leveraged",
+      "sourceUrl": "https://www.capitalfund.com.tw/etf/product/detail/094",
+      "sessionDate": "2026-11-05",
+      "close": 9.5,
+      "changePct": -6.31,
+      "sparkline": [
+        9.5
+      ],
+      "history": [
+        {
+          "date": "2026-11-05",
+          "close": 9.5
+        }
+      ],
+      "buyScore": null,
+      "sellScore": null,
+      "confirmed": false,
+      "leveraged": true,
+      "status": "stale",
+      "dataCount": 1,
+      "scoreStatus": "warming",
+      "reasons": [
+        "行情尚未更新至最近完整交易日"
+      ],
+      "details": [],
+      "cross": null,
+      "sourceName": "TWSE 開放資料",
+      "licenseNote": "政府資料開放授權條款第1版",
+      "dataSourceUrl": "https://openapi.twse.com.tw/",
+      "adjustment": "原始收盤價；調整待確認",
+      "expectedSession": "2026-11-06"
+    },
+    {
+      "id": "sp500",
+      "symbol": "SPX",
+      "name": "標普500",
+      "en": "S&P 500",
+      "region": "us",
+      "kind": "index",
+      "sourceUrl": "https://www.spglobal.com/spdji/en/indices/equity/sp-500/",
+      "sessionDate": null,
+      "close": null,
+      "changePct": null,
+      "sparkline": [],
+      "history": [],
+      "buyScore": null,
+      "sellScore": null,
+      "confirmed": false,
+      "leveraged": false,
+      "status": "unavailable",
+      "dataCount": 0,
+      "scoreStatus": "unavailable",
+      "reasons": [
+        "免費分享資料源待確認"
+      ],
+      "details": [],
+      "cross": null,
+      "sourceName": "官方行情",
+      "licenseNote": "尚未確認公開分享資料源",
+      "dataSourceUrl": "https://www.spglobal.com/spdji/en/indices/equity/sp-500/",
+      "adjustment": "價格指數",
+      "expectedSession": null
+    },
+    {
+      "id": "nasdaq",
+      "symbol": "IXIC",
+      "name": "納斯達克綜合",
+      "en": "NASDAQ COMPOSITE",
+      "region": "us",
+      "kind": "index",
+      "sourceUrl": "https://www.nasdaq.com/market-activity/index/comp",
+      "sessionDate": null,
+      "close": null,
+      "changePct": null,
+      "sparkline": [],
+      "history": [],
+      "buyScore": null,
+      "sellScore": null,
+      "confirmed": false,
+      "leveraged": false,
+      "status": "unavailable",
+      "dataCount": 0,
+      "scoreStatus": "unavailable",
+      "reasons": [
+        "免費分享資料源待確認"
+      ],
+      "details": [],
+      "cross": null,
+      "sourceName": "官方行情",
+      "licenseNote": "尚未確認公開分享資料源",
+      "dataSourceUrl": "https://www.nasdaq.com/market-activity/index/comp",
+      "adjustment": "價格指數",
+      "expectedSession": null
+    },
+    {
+      "id": "kospi",
+      "symbol": "KOSPI",
+      "name": "韓國綜合",
+      "en": "KOREA COMPOSITE",
+      "region": "asia",
+      "kind": "index",
+      "sourceUrl": "https://global.krx.co.kr/",
+      "sessionDate": null,
+      "close": null,
+      "changePct": null,
+      "sparkline": [],
+      "history": [],
+      "buyScore": null,
+      "sellScore": null,
+      "confirmed": false,
+      "leveraged": false,
+      "status": "unavailable",
+      "dataCount": 0,
+      "scoreStatus": "unavailable",
+      "reasons": [
+        "免費分享資料源待確認"
+      ],
+      "details": [],
+      "cross": null,
+      "sourceName": "官方行情",
+      "licenseNote": "尚未確認公開分享資料源",
+      "dataSourceUrl": "https://global.krx.co.kr/",
+      "adjustment": "價格指數",
+      "expectedSession": null
+    },
+    {
+      "id": "nikkei",
+      "symbol": "N225",
+      "name": "日經225",
+      "en": "NIKKEI 225",
+      "region": "asia",
+      "kind": "index",
+      "sourceUrl": "https://indexes.nikkei.co.jp/en/nkave",
+      "sessionDate": null,
+      "close": null,
+      "changePct": null,
+      "sparkline": [],
+      "history": [],
+      "buyScore": null,
+      "sellScore": null,
+      "confirmed": false,
+      "leveraged": false,
+      "status": "unavailable",
+      "dataCount": 0,
+      "scoreStatus": "unavailable",
+      "reasons": [
+        "免費分享資料源待確認"
+      ],
+      "details": [],
+      "cross": null,
+      "sourceName": "官方行情",
+      "licenseNote": "尚未確認公開分享資料源",
+      "dataSourceUrl": "https://indexes.nikkei.co.jp/en/nkave",
+      "adjustment": "價格指數",
+      "expectedSession": null
+    }
+  ],
+  "sentiment": [
+    {
+      "id": "vix",
+      "name": "VIX 波動率",
+      "label": "市場的心跳",
+      "value": null,
+      "status": "官方來源待確認分享權",
+      "url": "https://www.cboe.com/tradable_products/vix/"
+    },
+    {
+      "id": "fear",
+      "name": "CNN 恐慌貪婪",
+      "label": "情緒的溫度",
+      "value": null,
+      "status": "資料端點不穩定，先看官方",
+      "url": "https://www.cnn.com/markets/fear-and-greed"
+    }
+  ],
+  "research": {
+    "status": "awaiting-history",
+    "note": "歷史與公司行動資料未齊，尚未產生真實回測績效。"
+  }
+}

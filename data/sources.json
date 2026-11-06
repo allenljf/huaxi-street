@@ -1,0 +1,10 @@
+{
+  "reviewedAt": "2026-11-06",
+  "sources": [
+    {"id":"twse-openapi","publicEnabled":true,"url":"https://openapi.twse.com.tw/","license":"https://data.gov.tw/license","scope":"Documented OpenAPI endpoints only; attribution required","datasets":["https://data.gov.tw/dataset/11755"],"history":"Only snapshots actually received; do not silently bulk scrape website history"},
+    {"id":"twse-web-history","publicEnabled":false,"url":"https://www.twse.com.tw/zh/terms/use.html","reason":"Website bulk automation consent not established"},
+    {"id":"yahoo","publicEnabled":false,"url":"https://github.com/ranaroussi/yfinance","reason":"Personal-use data notice; no verified redistribution permission"},
+    {"id":"cboe","publicEnabled":false,"url":"https://www.cboe.com/tradable_products/vix/vix_historical_data","reason":"CSV reachable but public redistribution scope not established"},
+    {"id":"cnn","publicEnabled":false,"url":"https://www.cnn.com/markets/fear-and-greed","reason":"No stable developer API or verified redistribution permission"}
+  ]
+}
