@@ -188,15 +188,15 @@ TOTAL_STAGES=5
 DEPLOY_TARGET=github
 if [[ "${1:-}" == "--cloudflare" ]]; then DEPLOY_TARGET=cloudflare; TOTAL_STAGES=7; fi
 PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-cd "$PROJECT_ROOT"
-ENV_FILE="$PROJECT_ROOT/.env"
+cd "${PROJECT_ROOT}"
+ENV_FILE="${PROJECT_ROOT}/.env"
 
 preflight() {
   local missing=0
   for binary in git gh node npm python3; do
-    if ! command -v "$binary" >/dev/null 2>&1; then warn "請先安裝 $binary"; missing=1; fi
+    if ! command -v "${binary}" >/dev/null 2>&1; then warn "請先安裝 ${binary}"; missing=1; fi
   done
-  [[ "$missing" -eq 0 ]] || return 1
+  [[ "${missing}" -eq 0 ]] || return 1
   python3 -c 'import sys; assert sys.version_info >= (3, 11), "需要 Python 3.11 以上"'
   node -e 'if(Number(process.versions.node.split(".")[0])<24) throw Error("需要 Node.js 24 以上")'
 }
@@ -205,7 +205,7 @@ if [[ "${1:-}" == "--check" ]]; then
   say "環境檢查通過；未建立repo、未推送、未發布。"
   exit 0
 fi
-banner "陪葬! 華西街 — $DEPLOY_TARGET 部署精靈"
+banner "陪葬! 華西街 — ${DEPLOY_TARGET} 部署精靈"
 
 stage "檢查環境與GitHub登入"
 preflight
@@ -215,73 +215,73 @@ if ! gh auth status >/dev/null 2>&1; then
   gh auth login --hostname github.com --git-protocol https --web
 fi
 LOGIN="$(gh api user --jq .login)"
-say "目前GitHub帳號：$LOGIN"
-[[ "$LOGIN" == "allenljf" ]] || { warn "本專案預設allenljf，請切換正確帳號後重跑。"; exit 1; }
+say "目前GitHub帳號：${LOGIN}"
+[[ "${LOGIN}" == "allenljf" ]] || { warn "本專案預設allenljf，請切換正確帳號後重跑。"; exit 1; }
 
 stage "選擇專案網址"
 open_url "https://github.com/allenljf?tab=repositories"
 step "預設專案：allenljf/huaxi-street；可輸入其他未使用的專案名稱。"
 ask PROJECT_SLUG "專案名稱 [直接Enter使用huaxi-street]："
 PROJECT_SLUG="${PROJECT_SLUG:-huaxi-street}"
-[[ "$PROJECT_SLUG" =~ ^[A-Za-z0-9][A-Za-z0-9._-]*$ ]] || { warn "專案名稱只能用英文字母、數字、點、連字號及底線。"; exit 1; }
-TARGET_REPO="allenljf/$PROJECT_SLUG"
-write_env PROJECT_SLUG "$PROJECT_SLUG"
+[[ "${PROJECT_SLUG}" =~ ^[A-Za-z0-9][A-Za-z0-9._-]*$ ]] || { warn "專案名稱只能用英文字母、數字、點、連字號及底線。"; exit 1; }
+TARGET_REPO="allenljf/${PROJECT_SLUG}"
+write_env PROJECT_SLUG "${PROJECT_SLUG}"
 if git remote get-url origin >/dev/null 2>&1; then
   REMOTE="$(git remote get-url origin)"
-  [[ "$REMOTE" == "https://github.com/$TARGET_REPO.git" || "$REMOTE" == "git@github.com:$TARGET_REPO.git" || "$REMOTE" == "https://github.com/$TARGET_REPO" ]] || { warn "現有origin不是$TARGET_REPO；保留設定並停止。"; exit 1; }
+  [[ "${REMOTE}" == "https://github.com/${TARGET_REPO}.git" || "${REMOTE}" == "git@github.com:${TARGET_REPO}.git" || "${REMOTE}" == "https://github.com/${TARGET_REPO}" ]] || { warn "現有origin不是${TARGET_REPO}；保留設定並停止。"; exit 1; }
 fi
-if gh repo view "$TARGET_REPO" >/dev/null 2>&1; then
-  say "將使用既有專案：$TARGET_REPO；不覆寫不同的main歷史。"
+if gh repo view "${TARGET_REPO}" >/dev/null 2>&1; then
+  say "將使用既有專案：${TARGET_REPO}；不覆寫不同的main歷史。"
 else
-  confirm "建立公開GitHub專案 $TARGET_REPO？" || exit 0
-  gh repo create "$TARGET_REPO" --public --description '陪葬! 華西街 — 有據可查的每日市場筆記'
+  confirm "建立公開GitHub專案 ${TARGET_REPO}？" || exit 0
+  gh repo create "${TARGET_REPO}" --public --description '陪葬! 華西街 — 有據可查的每日市場筆記'
 fi
-if ! git remote get-url origin >/dev/null 2>&1; then git remote add origin "https://github.com/$TARGET_REPO.git"; fi
+if ! git remote get-url origin >/dev/null 2>&1; then git remote add origin "https://github.com/${TARGET_REPO}.git"; fi
 
 stage "確認亞洲與美國更新時段"
 say "亞洲：台灣時間週一至週五16:00；美國：週二至週六08:00。"
 say "各國休市與美國夏令時間由交易日曆判定；平台排隊可能延後完成。"
-gh variable set DEPLOY_TARGET --repo "$TARGET_REPO" --body "$DEPLOY_TARGET"
+gh variable set DEPLOY_TARGET --repo "${TARGET_REPO}" --body "${DEPLOY_TARGET}"
 # Mirror the repository's explicit provider policy into Actions variables.
 ENABLE_RESEARCH_SOURCES="$(python3 -c 'import json; print(str(json.load(open("data/provider-settings.json"))["enableResearch"]).lower())')"
 PUBLISH_RESEARCH_SOURCES="$(python3 -c 'import json; print(str(json.load(open("data/provider-settings.json"))["publishResearch"]).lower())')"
-gh variable set ENABLE_RESEARCH_SOURCES --repo "$TARGET_REPO" --body "$ENABLE_RESEARCH_SOURCES"
-gh variable set PUBLISH_RESEARCH_SOURCES --repo "$TARGET_REPO" --body "$PUBLISH_RESEARCH_SOURCES"
-write_env DEPLOY_TARGET "$DEPLOY_TARGET"
+gh variable set ENABLE_RESEARCH_SOURCES --repo "${TARGET_REPO}" --body "${ENABLE_RESEARCH_SOURCES}"
+gh variable set PUBLISH_RESEARCH_SOURCES --repo "${TARGET_REPO}" --body "${PUBLISH_RESEARCH_SOURCES}"
+write_env DEPLOY_TARGET "${DEPLOY_TARGET}"
 
-if [[ "$DEPLOY_TARGET" == "cloudflare" ]]; then
+if [[ "${DEPLOY_TARGET}" == "cloudflare" ]]; then
   stage "Cloudflare帳號與網站名稱"
   open_url "https://dash.cloudflare.com/"
   step "選擇你的Cloudflare帳號；帳號ID可由帳號網址中的32位字元或官方說明取得。"
   say "官方說明：https://developers.cloudflare.com/fundamentals/account/find-account-and-zone-ids/"
   ask CF_ACCOUNT_ID "Cloudflare帳號ID（32位）："
-  [[ "$CF_ACCOUNT_ID" =~ ^[0-9a-fA-F]{32}$ ]] || { warn "帳號ID格式不正確。"; exit 1; }
+  [[ "${CF_ACCOUNT_ID}" =~ ^[0-9a-fA-F]{32}$ ]] || { warn "帳號ID格式不正確。"; exit 1; }
   ask CF_PROJECT_NAME "Cloudflare Pages專案名稱 [直接Enter使用huaxi-street]："
   CF_PROJECT_NAME="${CF_PROJECT_NAME:-huaxi-street}"
-  [[ "$CF_PROJECT_NAME" =~ ^[a-z0-9][a-z0-9-]{0,57}$ ]] || { warn "Pages名稱只能用小寫英文字母、數字、連字號，最多58字。"; exit 1; }
-  write_env CF_ACCOUNT_ID "$CF_ACCOUNT_ID"
-  write_env CF_PROJECT_NAME "$CF_PROJECT_NAME"
+  [[ "${CF_PROJECT_NAME}" =~ ^[a-z0-9][a-z0-9-]{0,57}$ ]] || { warn "Pages名稱只能用小寫英文字母、數字、連字號，最多58字。"; exit 1; }
+  write_env CF_ACCOUNT_ID "${CF_ACCOUNT_ID}"
+  write_env CF_PROJECT_NAME "${CF_PROJECT_NAME}"
 
   stage "Cloudflare部署授權"
   open_url "https://dash.cloudflare.com/profile/api-tokens"
   step "Create Token → Create Custom Token → Account / Cloudflare Pages / Edit；範圍限定剛才的帳號。"
   step "完成建立並複製Token。不要貼到聊天裡。"
   ask_secret CF_DEPLOY_TOKEN "貼上Cloudflare部署Token（輸入隱藏，不存.env）："
-  [[ -n "$CF_DEPLOY_TOKEN" ]] || { warn "未輸入Token。"; exit 1; }
-  confirm "確認在Cloudflare帳號 $CF_ACCOUNT_ID 建立或使用Pages專案 $CF_PROJECT_NAME，並將部署憑證存入 $TARGET_REPO 的Actions Secrets？" || exit 0
-  CF_PAGES_URL="$(CLOUDFLARE_ACCOUNT_ID="$CF_ACCOUNT_ID" CLOUDFLARE_API_TOKEN="$CF_DEPLOY_TOKEN" python3 -m market.cloudflare --project "$CF_PROJECT_NAME")"
-  printf '%s' "$CF_DEPLOY_TOKEN" | gh secret set CLOUDFLARE_API_TOKEN --repo "$TARGET_REPO"
-  printf '%s' "$CF_ACCOUNT_ID" | gh secret set CLOUDFLARE_ACCOUNT_ID --repo "$TARGET_REPO"
-  gh variable set CLOUDFLARE_PROJECT_NAME --repo "$TARGET_REPO" --body "$CF_PROJECT_NAME"
-  gh variable set CLOUDFLARE_PAGES_URL --repo "$TARGET_REPO" --body "$CF_PAGES_URL"
-  write_env CF_PAGES_URL "$CF_PAGES_URL"
+  [[ -n "${CF_DEPLOY_TOKEN}" ]] || { warn "未輸入Token。"; exit 1; }
+  confirm "確認在Cloudflare帳號 ${CF_ACCOUNT_ID} 建立或使用Pages專案 ${CF_PROJECT_NAME}，並將部署憑證存入 ${TARGET_REPO} 的Actions Secrets？" || exit 0
+  CF_PAGES_URL="$(CLOUDFLARE_ACCOUNT_ID="${CF_ACCOUNT_ID}" CLOUDFLARE_API_TOKEN="${CF_DEPLOY_TOKEN}" python3 -m market.cloudflare --project "${CF_PROJECT_NAME}")"
+  printf '%s' "${CF_DEPLOY_TOKEN}" | gh secret set CLOUDFLARE_API_TOKEN --repo "${TARGET_REPO}"
+  printf '%s' "${CF_ACCOUNT_ID}" | gh secret set CLOUDFLARE_ACCOUNT_ID --repo "${TARGET_REPO}"
+  gh variable set CLOUDFLARE_PROJECT_NAME --repo "${TARGET_REPO}" --body "${CF_PROJECT_NAME}"
+  gh variable set CLOUDFLARE_PAGES_URL --repo "${TARGET_REPO}" --body "${CF_PAGES_URL}"
+  write_env CF_PAGES_URL "${CF_PAGES_URL}"
   unset CF_DEPLOY_TOKEN
 fi
 
 stage "驗證並發布"
-say "將公開程式與允許分享的資料：$TARGET_REPO"
-if [[ "$DEPLOY_TARGET" == "cloudflare" ]]; then SITE_URL="$CF_PAGES_URL"; else SITE_URL="https://allenljf.github.io/$PROJECT_SLUG/"; fi
-say "網站：$SITE_URL"
+say "將公開程式與允許分享的資料：${TARGET_REPO}"
+if [[ "${DEPLOY_TARGET}" == "cloudflare" ]]; then SITE_URL="${CF_PAGES_URL}"; else SITE_URL="https://allenljf.github.io/${PROJECT_SLUG}/"; fi
+say "網站：${SITE_URL}"
 say "台股最新收盤已接入；完整歷史與海外來源未齊時不發布假分數。"
 python3 -m venv .venv
 .venv/bin/python -m pip install -r requirements.txt
@@ -298,26 +298,26 @@ if others:
     print('有尚未提交的程式或文件，請先檢查並提交：'+', '.join(others))
     sys.exit(1)
 CHECK
-confirm "確認推送目前版本到 $TARGET_REPO 的main，並公開發布網站？" || exit 0
+confirm "確認推送目前版本到 ${TARGET_REPO} 的main，並公開發布網站？" || exit 0
 git add -- data/history.json data/calendar.json data/sentiment.json web/public/data/markets.json
 if ! git diff --cached --quiet; then git commit -m 'data: refresh pre-deployment snapshot'; fi
 git push origin HEAD:main
-gh repo edit "$TARGET_REPO" --default-branch main
-if [[ "$DEPLOY_TARGET" != "cloudflare" ]]; then
-  if gh api "repos/$TARGET_REPO/pages" >/dev/null 2>&1; then
-    gh api --method PUT "repos/$TARGET_REPO/pages" -f build_type=workflow >/dev/null
+gh repo edit "${TARGET_REPO}" --default-branch main
+if [[ "${DEPLOY_TARGET}" != "cloudflare" ]]; then
+  if gh api "repos/${TARGET_REPO}/pages" >/dev/null 2>&1; then
+    gh api --method PUT "repos/${TARGET_REPO}/pages" -f build_type=workflow >/dev/null
   else
-    gh api --method POST "repos/$TARGET_REPO/pages" -f build_type=workflow >/dev/null
+    gh api --method POST "repos/${TARGET_REPO}/pages" -f build_type=workflow >/dev/null
   fi
 fi
-gh workflow run daily-pages.yml --repo "$TARGET_REPO" --ref main
+gh workflow run daily-pages.yml --repo "${TARGET_REPO}" --ref main
 
 stage "確認網站與更新狀態"
-open_url "https://github.com/$TARGET_REPO/actions/workflows/daily-pages.yml"
+open_url "https://github.com/${TARGET_REPO}/actions/workflows/daily-pages.yml"
 step "等最新一筆更新完成；若失敗，展開紅色步驟查看資料連線或Pages權限。"
 pause "確認Actions顯示綠色後按Enter："
-open_url "$SITE_URL"
+open_url "${SITE_URL}"
 say "網站名稱：陪葬! 華西街"
 say "朋友知道網址即可查看，無登入限制。"
-say "手動重跑：gh workflow run daily-pages.yml --repo $TARGET_REPO"
+say "手動重跑：gh workflow run daily-pages.yml --repo ${TARGET_REPO}"
 finish

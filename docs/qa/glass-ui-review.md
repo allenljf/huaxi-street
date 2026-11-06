@@ -32,3 +32,8 @@
 ## 免費來源公開設定確認後
 
 使用者已明確選擇公開站顯示免費來源資料。重新線上抓取後，公開JSON與Cloudflare ZIP均驗證為9標的行情、9組陪葬／躲噴分數，亞洲11/6、美股11/5；VIX有值，CNN缺漏。已移除本機私人研究預覽模式，瀏覽器實測公開資料與指標詳情可讀。Python40案例再次通過。此確認不等於Cloudflare已實際上傳，首次發布仍由精靈完成。
+
+
+## macOS部署精靈變數邊界修正
+
+使用者第二步遇到TARGET_REPO全形問號被誤解析為變數名稱。已在macOS內建Bash與UTF-8 locale重現；新增4個實際執行精靈片段的回歸案例（新repo確認、既有repo說明、origin不符、Cloudflare確認），修正前4例皆失敗，修正後皆通過。只正規化STAGES之後的變數為${NAME}，保持wizard共用library不變。完整Python44案例、bash語法與--check通過；測試替換服務邊界，未建立repo、未推送或發布。
