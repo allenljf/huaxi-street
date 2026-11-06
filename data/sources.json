@@ -20,27 +20,30 @@
     },
     {
       "id": "yahoo",
-      "publicEnabled": false,
+      "publicEnabled": true,
       "url": "https://github.com/ranaroussi/yfinance",
       "reason": "Personal-use data notice; no verified redistribution permission",
       "adapterImplemented": true,
-      "defaultUse": "private research; explicit publication switch remains separate"
+      "defaultUse": "Public website via explicit provider-settings.json choice; failures remain missing",
+      "publicationBasis": "Explicit owner deployment choice, 2026-11-06; not a verified redistribution license"
     },
     {
       "id": "cboe",
-      "publicEnabled": false,
+      "publicEnabled": true,
       "url": "https://www.cboe.com/tradable_products/vix/vix_historical_data",
       "reason": "CSV reachable but public redistribution scope not established",
       "adapterImplemented": true,
-      "defaultUse": "private research; explicit publication switch remains separate"
+      "defaultUse": "Public website via explicit provider-settings.json choice; failures remain missing",
+      "publicationBasis": "Explicit owner deployment choice, 2026-11-06; not a verified redistribution license"
     },
     {
       "id": "cnn",
-      "publicEnabled": false,
+      "publicEnabled": true,
       "url": "https://www.cnn.com/markets/fear-and-greed",
       "reason": "No stable developer API or verified redistribution permission",
       "adapterImplemented": true,
-      "defaultUse": "private research; explicit publication switch remains separate"
+      "defaultUse": "Public website via explicit provider-settings.json choice; failures remain missing",
+      "publicationBasis": "Explicit owner deployment choice, 2026-11-06; not a verified redistribution license"
     }
   ]
 }

@@ -7,7 +7,7 @@
 - 台灣加權、2330、0050、00631L、00685L最新已收盤行情：TWSE官方OpenAPI。
 - RSI14、台式KD9、SMA50/200與交叉、MACD、布林、ADX/DMI、ATR與252日高點回落的計算與測試已提供。
 - TWSE開放資料版首次歷史不足，因此暫不完整評分。另已實作Yahoo免費研究來源，可一次取得各標的5年調整OHLC；本機研究版9個標的已實際算出分數。
-- 免費研究版已實測接上海外四個指數與VIX；CNN仍回HTTP418，顯示無資料，不冒充成功。預設研究資料只存.private/，與公開輸出分開；公開使用仍受來源條款限制。
+- 免費研究版已實測接上海外四個指數與VIX；CNN仍回HTTP418，顯示無資料，不冒充成功。使用者已明確選擇在公開站顯示免費來源資料，目前已啟用；公開使用仍受來源條款限制。
 - 可匯入已取得公開使用權的歷史資料；引擎支援分割／配息一致調整。回測工具已實作，但真實歷史未齊時拒絕產生績效。
 - 分數是研究規則的支持度，尚無真實樣本外績效結論。陪葬代表買進／加碼支持；躲噴代表賣出／減碼支持。
 
@@ -44,12 +44,12 @@ npm --prefix web run dev
 
 ```bash
 .venv/bin/python -m market.pipeline --research --batch all
-RESEARCH_PREVIEW=true npm --prefix web run dev
+npm --prefix web run dev
 ```
 
-研究快照寫入被忽略的.private/，Vite僅在開發模式提供此快照；正式build不會自動帶入。來源為Yahoo調整後OHLC、Cboe VIX；CNN失敗保留缺漏。台灣11/6下午可取得亞洲11/6，當時美股最新完整收盤為11/5。
+未啟用公開來源時，研究快照寫入被忽略的.private/，Vite僅在開發模式提供此快照。目前使用者已選擇公開來源，正常更新會產生公開快照並納入正式建置。來源為Yahoo調整後OHLC、Cboe VIX；CNN失敗保留缺漏。台灣11/6下午可取得亞洲11/6，當時美股最新完整收盤為11/5。
 
-如果操作者另外選擇公開使用研究資料，可在data/provider-settings.json將enableResearch／publishResearch設為true，精靈會同步Actions變數。這是發布開關，不是授權證明。來源使用條款記錄於data/sources.json。`--publish-research`必須搭配`--research`，不可默默將私人研究輸出放到公開站。
+使用者已選擇公開使用研究資料，data/provider-settings.json的enableResearch／publishResearch皆為true，精靈會同步Actions變數。這是發布開關，不是授權證明。來源使用條款記錄於data/sources.json。`--publish-research`必須搭配`--research`，不可默默將私人研究輸出放到公開站。
 
 ## 上傳Cloudflare
 

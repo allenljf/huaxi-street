@@ -43,7 +43,7 @@
 | Actions Variable | CLOUDFLARE_PROJECT_NAME | 控制台的實際Pages專案名稱 |
 | Actions Variable | DEPLOY_TARGET | cloudflare |
 
-來源選擇還有 ENABLE_RESEARCH_SOURCES / PUBLISH_RESEARCH_SOURCES 兩個變數，由精靈根據data/provider-settings.json同步。後者開啟只是操作者選擇發布，並不取得來源授權；預設false。
+來源選擇還有 ENABLE_RESEARCH_SOURCES / PUBLISH_RESEARCH_SOURCES 兩個變數，由精靈根據data/provider-settings.json同步。後者開啟只是操作者選擇發布，並不取得來源授權；使用者已於2026-11-06明確選擇啟用，目前兩者皆true。
 
 既有Cloudflare專案若已連GitHub，請避免同時啟用Git整合自動建置和Actions部署，否則可能重複建置。可以另建本專案專用的Direct Upload Pages專案。
 
@@ -62,6 +62,6 @@ GitHub UTC cron分別是 `0 8 * * 1-5`、`0 0 * * 2-6`。各市場以交易日�
 
 2026-11-06台北18:44的實測：TWSE OpenAPI當時仍回11/5；官方一般報表已包含11/6。免費研究來源已取得台股／日韓11/6與美股11/5、VIX11/5。美股11/6收盤須等台北11/7清晨，因此11/7的08:00批次才會更新。CNN當時HTTP418，未冒充有值。
 
-免費研究資料預設只保存在被忽略的.private/，未混入預設上傳ZIP。公開部分受來源設定控制。
+使用者已於2026-11-06選擇公開站顯示免費來源資料，最新ZIP已改為包含行情與指標；CNN缺漏仍如實保留。公開範圍受data/provider-settings.json與Actions變數控制。
 
 [Cloudflare官方CI部署說明](https://developers.cloudflare.com/pages/how-to/use-direct-upload-with-continuous-integration/)、[尋找帳號ID](https://developers.cloudflare.com/fundamentals/account/find-account-and-zone-ids/)。

@@ -85,3 +85,8 @@ GitHub Pages已納入使用者批准開始的實作範圍；公開發布仍依�
 新增Yahoo五年調整OHLC免費研究adapter與Cboe／CNN adapter；本機實測9標的皆取得最近完整交易日及指標，VIX取得11/5，CNN418維持缺漏。交易日曆使用exchange-calendars，採各國close與DST判斷。兩個batch只抓自己的標的；任何市場的lastSuccessfulFetchAt不因別的batch刷新。瀏覽器依市場下一次應更新時段抑制過期分數。
 
 免費研究資料預設.private/且Vite僅開發預覽可讀；公開設定須另選，下載可行不等於再散布授權。原始來源的公開限制未因新增adapter自動解除。Cloudflare打包只含web/dist，不含.private/或研究截圖。Cloudflare Token僅隱藏輸入至環境並存GitHub Secret，不寫.env。
+
+
+## 免費來源公開選擇已確認
+
+使用者於2026-11-06明確選擇「公開站也顯示免費來源數據，由我自行確認並承擔來源使用條款」。因此啟用data/provider-settings.json的enableResearch與publishResearch，Yahoo／Cboe／CNN adapter可產出公開快照；CNN不可取得時仍顯示缺漏。這是使用者的發布範圍選擇，不記為資料商已授權。Cloudflare壓縮包改為包含實際免費來源行情與指標。外部網站發布仍依既定部署精靈最後確認。

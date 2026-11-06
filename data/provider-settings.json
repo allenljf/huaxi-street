@@ -1,5 +1,6 @@
 {
-  "enableResearch": false,
-  "publishResearch": false,
-  "note": "Free research providers can be fetched locally with --research. Publication is a separate explicit choice and does not grant data rights."
+  "enableResearch": true,
+  "publishResearch": true,
+  "note": "Owner explicitly selected publication of free-source data on 2026-11-06. This records the deployment choice and does not grant or verify third-party data rights.",
+  "ownerChoiceDate": "2026-11-06"
 }
