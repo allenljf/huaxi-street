@@ -65,3 +65,9 @@ GitHub UTC cron分別是 `0 8 * * 1-5`、`0 0 * * 2-6`。各市場以交易日�
 使用者已於2026-11-06選擇公開站顯示免費來源資料，最新ZIP已改為包含行情與指標；CNN缺漏仍如實保留。公開範圍受data/provider-settings.json與Actions變數控制。
 
 [Cloudflare官方CI部署說明](https://developers.cloudflare.com/pages/how-to/use-direct-upload-with-continuous-integration/)、[尋找帳號ID](https://developers.cloudflare.com/fundamentals/account/find-account-and-zone-ids/)。
+
+## 第五步回應403
+
+403只代表請求被拒絕，不能單憑這個狀態判斷一定是Token貼錯。新版精靈會顯示Cloudflare JSON錯誤碼與遮蔽後訊息，並嘗試驗證Token是否active。active仍不代表有目標帳號的Pages權限；若回傳非JSON則明示無法判定，不顯示整份回應。
+
+核對Account / Cloudflare Pages / Edit、Account Resources的Specific account與帳號ID是否一致（不是Zone ID），以及有效時間／IP限制。只貼Token字串，不要帶Bearer、引號或curl。驗證失敗可留在第五步重試，失敗的Token不寫入GitHub Secret。提供除錯資訊時只貼錯誤碼與訊息，不貼Token。

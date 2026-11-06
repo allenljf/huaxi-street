@@ -53,4 +53,26 @@ git() { if [[ "$1 $2 $3" == "remote get-url origin" ]]; then REMOTE_BODY; else r
         self.assertIn('Pages專案 huaxi-street，',result.stdout)
         self.assertIn('存入 allenljf/huaxi-street 的Actions Secrets？',result.stdout)
 
+    def run_auth_step(self,script):
+        library=script.split('# STAGES: author this section.',1)[0]
+        auth=script.split('  step "完成建立並複製Token。不要貼到聊天裡。"',1)[1].split("  printf '%s'",1)[0]
+        with tempfile.TemporaryDirectory() as folder:
+            shims='''
+CF_ACCOUNT_ID=account; CF_PROJECT_NAME=huaxi-street; TARGET_REPO=allenljf/huaxi-street
+python3() {
+  if [[ ! -f "CALL_FILE" ]]; then : > "CALL_FILE"; printf 'Cloudflare HTTP403\n' >&2; return 1; fi
+  printf 'https://huaxi-street.pages.dev\n'
+}
+'''.replace('CALL_FILE',folder+'/attempted')
+            program=library+shims+auth+'\nprintf "RESULT=%s\\n" "$CF_PAGES_URL"'
+            return subprocess.run([shutil.which('bash'),'-c',program],input='first-token\ny\ny\nsecond-token\ny\n',text=True,errors='replace',capture_output=True,env={**os.environ,'LC_ALL':'en_US.UTF-8'},timeout=5)
+
+    def test_failed_auth_can_retry_same_stage_without_exposing_tokens(self):
+        result=self.run_auth_step((ROOT/'scripts/setup.sh').read_text())
+        self.assertEqual(result.returncode,0,result.stderr)
+        self.assertIn('RESULT=https://huaxi-street.pages.dev',result.stdout)
+        self.assertIn('重新貼上Token',result.stdout)
+        self.assertNotIn('first-token',result.stdout+result.stderr)
+        self.assertNotIn('second-token',result.stdout+result.stderr)
+
 if __name__=='__main__':unittest.main()

@@ -37,3 +37,7 @@
 ## macOS部署精靈變數邊界修正
 
 使用者第二步遇到TARGET_REPO全形問號被誤解析為變數名稱。已在macOS內建Bash與UTF-8 locale重現；新增4個實際執行精靈片段的回歸案例（新repo確認、既有repo說明、origin不符、Cloudflare確認），修正前4例皆失敗，修正後皆通過。只正規化STAGES之後的變數為${NAME}，保持wizard共用library不變。完整Python44案例、bash語法與--check通過；測試替換服務邊界，未建立repo、未推送或發布。
+
+## Cloudflare403診斷與重試
+
+原有訊息丟失Cloudflare錯誤body，無法判斷實際拒絕原因。已加入有界且遮蔽Token的錯誤碼／訊息、非JSON拒絕區分、Token狀態檢查，以及明確Accept與User-Agent。第五步可在失敗後重試；使用替換網路邊界的實際shell片段驗證第一次403、第二次成功，且兩次輸入的Token皆不出現在輸出。舊版本同一重試測試失敗。49個Python測試與bash語法／--check通過。未取得使用者Token，未驗證實際Cloudflare403已解除，也未執行外部建立／發布。

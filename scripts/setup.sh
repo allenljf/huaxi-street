@@ -266,10 +266,19 @@ if [[ "${DEPLOY_TARGET}" == "cloudflare" ]]; then
   open_url "https://dash.cloudflare.com/profile/api-tokens"
   step "Create Token → Create Custom Token → Account / Cloudflare Pages / Edit；範圍限定剛才的帳號。"
   step "完成建立並複製Token。不要貼到聊天裡。"
-  ask_secret CF_DEPLOY_TOKEN "貼上Cloudflare部署Token（輸入隱藏，不存.env）："
-  [[ -n "${CF_DEPLOY_TOKEN}" ]] || { warn "未輸入Token。"; exit 1; }
-  confirm "確認在Cloudflare帳號 ${CF_ACCOUNT_ID} 建立或使用Pages專案 ${CF_PROJECT_NAME}，並將部署憑證存入 ${TARGET_REPO} 的Actions Secrets？" || exit 0
-  CF_PAGES_URL="$(CLOUDFLARE_ACCOUNT_ID="${CF_ACCOUNT_ID}" CLOUDFLARE_API_TOKEN="${CF_DEPLOY_TOKEN}" python3 -m market.cloudflare --project "${CF_PROJECT_NAME}")"
+  step "Account Resources選Include / Specific account，必須與上一步帳號ID一致，不是Zone ID。"
+  step "檢查有效期限與Client IP filtering；限制須同時允許本機及GitHub Actions執行環境。"
+  while true; do
+    ask_secret CF_DEPLOY_TOKEN "貼上Cloudflare部署Token（只貼字串，輸入隱藏，不存.env）："
+    [[ -n "${CF_DEPLOY_TOKEN}" ]] || { warn "未輸入Token。"; exit 1; }
+    confirm "確認在Cloudflare帳號 ${CF_ACCOUNT_ID} 建立或使用Pages專案 ${CF_PROJECT_NAME}，並將部署憑證存入 ${TARGET_REPO} 的Actions Secrets？" || exit 0
+    if CF_PAGES_URL="$(CLOUDFLARE_ACCOUNT_ID="${CF_ACCOUNT_ID}" CLOUDFLARE_API_TOKEN="${CF_DEPLOY_TOKEN}" python3 -m market.cloudflare --project "${CF_PROJECT_NAME}")"; then
+      break
+    fi
+    unset CF_DEPLOY_TOKEN
+    warn "Cloudflare尚未確認授權，本次尚未儲存部署Token。可修正Token設定後在此重試。"
+    confirm "留在第五步，重新貼上Token？" || exit 1
+  done
   printf '%s' "${CF_DEPLOY_TOKEN}" | gh secret set CLOUDFLARE_API_TOKEN --repo "${TARGET_REPO}"
   printf '%s' "${CF_ACCOUNT_ID}" | gh secret set CLOUDFLARE_ACCOUNT_ID --repo "${TARGET_REPO}"
   gh variable set CLOUDFLARE_PROJECT_NAME --repo "${TARGET_REPO}" --body "${CF_PROJECT_NAME}"
