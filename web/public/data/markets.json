@@ -1,9 +1,12 @@
 {
   "version": 1,
   "rulesVersion": "research-v1",
-  "generatedAt": "2026-11-06T18:35:01.070276+08:00",
+  "generatedAt": "2026-11-06T18:56:48.590439+08:00",
   "expectedTaiwanSession": "2026-11-06",
-  "scheduleText": "每週一至五 08:00 啟動更新",
+  "scheduleText": "亞洲 週一至五 16:00 · 美國 週二至六 08:00（台北時間）",
+  "lastBatch": "all",
+  "researchSources": false,
+  "privateResearch": false,
   "markets": [
     {
       "id": "taiex",
@@ -56,7 +59,11 @@
       "licenseNote": "政府資料開放授權條款第1版",
       "dataSourceUrl": "https://openapi.twse.com.tw/",
       "adjustment": "價格指數",
-      "expectedSession": "2026-11-06"
+      "expectedSession": "2026-11-06",
+      "lastSuccessfulFetchAt": "2026-11-06T18:56:48.590439+08:00",
+      "lastAttemptedAt": "2026-11-06T18:56:48.590439+08:00",
+      "sourceError": null,
+      "nextUpdateAt": "2026-11-09T16:00:00+08:00"
     },
     {
       "id": "2330",
@@ -94,7 +101,11 @@
       "licenseNote": "政府資料開放授權條款第1版",
       "dataSourceUrl": "https://openapi.twse.com.tw/",
       "adjustment": "原始收盤價；調整待確認",
-      "expectedSession": "2026-11-06"
+      "expectedSession": "2026-11-06",
+      "lastSuccessfulFetchAt": "2026-11-06T18:56:48.590439+08:00",
+      "lastAttemptedAt": "2026-11-06T18:56:48.590439+08:00",
+      "sourceError": null,
+      "nextUpdateAt": "2026-11-09T16:00:00+08:00"
     },
     {
       "id": "0050",
@@ -132,7 +143,11 @@
       "licenseNote": "政府資料開放授權條款第1版",
       "dataSourceUrl": "https://openapi.twse.com.tw/",
       "adjustment": "原始收盤價；調整待確認",
-      "expectedSession": "2026-11-06"
+      "expectedSession": "2026-11-06",
+      "lastSuccessfulFetchAt": "2026-11-06T18:56:48.590439+08:00",
+      "lastAttemptedAt": "2026-11-06T18:56:48.590439+08:00",
+      "sourceError": null,
+      "nextUpdateAt": "2026-11-09T16:00:00+08:00"
     },
     {
       "id": "00631L",
@@ -170,7 +185,11 @@
       "licenseNote": "政府資料開放授權條款第1版",
       "dataSourceUrl": "https://openapi.twse.com.tw/",
       "adjustment": "原始收盤價；調整待確認",
-      "expectedSession": "2026-11-06"
+      "expectedSession": "2026-11-06",
+      "lastSuccessfulFetchAt": "2026-11-06T18:56:48.590439+08:00",
+      "lastAttemptedAt": "2026-11-06T18:56:48.590439+08:00",
+      "sourceError": null,
+      "nextUpdateAt": "2026-11-09T16:00:00+08:00"
     },
     {
       "id": "00685L",
@@ -208,7 +227,11 @@
       "licenseNote": "政府資料開放授權條款第1版",
       "dataSourceUrl": "https://openapi.twse.com.tw/",
       "adjustment": "原始收盤價；調整待確認",
-      "expectedSession": "2026-11-06"
+      "expectedSession": "2026-11-06",
+      "lastSuccessfulFetchAt": "2026-11-06T18:56:48.590439+08:00",
+      "lastAttemptedAt": "2026-11-06T18:56:48.590439+08:00",
+      "sourceError": null,
+      "nextUpdateAt": "2026-11-09T16:00:00+08:00"
     },
     {
       "id": "sp500",
@@ -239,7 +262,11 @@
       "licenseNote": "尚未確認公開分享資料源",
       "dataSourceUrl": "https://www.spglobal.com/spdji/en/indices/equity/sp-500/",
       "adjustment": "價格指數",
-      "expectedSession": null
+      "expectedSession": "2026-11-05",
+      "lastSuccessfulFetchAt": null,
+      "lastAttemptedAt": "2026-11-06T18:56:48.590439+08:00",
+      "sourceError": null,
+      "nextUpdateAt": "2026-11-07T08:00:00+08:00"
     },
     {
       "id": "nasdaq",
@@ -270,7 +297,11 @@
       "licenseNote": "尚未確認公開分享資料源",
       "dataSourceUrl": "https://www.nasdaq.com/market-activity/index/comp",
       "adjustment": "價格指數",
-      "expectedSession": null
+      "expectedSession": "2026-11-05",
+      "lastSuccessfulFetchAt": null,
+      "lastAttemptedAt": "2026-11-06T18:56:48.590439+08:00",
+      "sourceError": null,
+      "nextUpdateAt": "2026-11-07T08:00:00+08:00"
     },
     {
       "id": "kospi",
@@ -301,7 +332,11 @@
       "licenseNote": "尚未確認公開分享資料源",
       "dataSourceUrl": "https://global.krx.co.kr/",
       "adjustment": "價格指數",
-      "expectedSession": null
+      "expectedSession": "2026-11-06",
+      "lastSuccessfulFetchAt": null,
+      "lastAttemptedAt": "2026-11-06T18:56:48.590439+08:00",
+      "sourceError": null,
+      "nextUpdateAt": "2026-11-09T16:00:00+08:00"
     },
     {
       "id": "nikkei",
@@ -332,7 +367,11 @@
       "licenseNote": "尚未確認公開分享資料源",
       "dataSourceUrl": "https://indexes.nikkei.co.jp/en/nkave",
       "adjustment": "價格指數",
-      "expectedSession": null
+      "expectedSession": "2026-11-06",
+      "lastSuccessfulFetchAt": null,
+      "lastAttemptedAt": "2026-11-06T18:56:48.590439+08:00",
+      "sourceError": null,
+      "nextUpdateAt": "2026-11-09T16:00:00+08:00"
     }
   ],
   "sentiment": [
@@ -355,6 +394,6 @@
   ],
   "research": {
     "status": "awaiting-history",
-    "note": "歷史與公司行動資料未齊，尚未產生真實回測績效。"
+    "note": "技術指標採固定研究規則；尚未產生真實樣本外回測績效。"
   }
 }

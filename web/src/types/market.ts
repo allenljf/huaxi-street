@@ -4,12 +4,12 @@ export interface MarketView {
  sessionDate:string|null; close:number|null; changePct:number|null; sparkline:number[];
  history:{date:string;close:number}[]; buyScore:number|null; sellScore:number|null;
  status:'fresh'|'holiday'|'stale'|'unavailable'; scoreStatus:string; confirmed:boolean; leveraged:boolean;
- dataCount:number; reasons:string[]; details:Indicator[]; cross?:'golden'|'death'|null;
+ dataCount:number; lastSuccessfulFetchAt?:string|null; lastAttemptedAt?:string|null; expectedSession?:string; nextUpdateAt?:string; reasons:string[]; details:Indicator[]; cross?:'golden'|'death'|null;
  sourceName:string; sourceUrl:string; dataSourceUrl?:string; licenseNote:string; adjustment?:string;
 }
 export interface Dashboard {
- version:1; rulesVersion:string; generatedAt:string; expectedTaiwanSession:string; scheduleText?:string; markets:MarketView[];
- sentiment:{id:string; name:string; label:string; value:number|null; status:string; url:string}[];
+ version:1; privateResearch?:boolean; researchSources?:boolean; rulesVersion:string; generatedAt:string; expectedTaiwanSession:string; scheduleText?:string; markets:MarketView[];
+ sentiment:{id:string; name:string; label:string; value:number|null; status:string; sessionDate?:string; url:string}[];
  research:{status:string;note:string};
 }
 export function parseDashboard(data:unknown):Dashboard {

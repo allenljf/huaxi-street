@@ -18,3 +18,13 @@
 - [桌面](screenshots/desktop.png)
 - [手機](screenshots/mobile.png)
 - [手機詳情](screenshots/mobile-dialog.png)
+
+
+## 兩段更新與Cloudflare追加驗收
+
+- Python40案例通過（包含原22），新增NYSE感恩節／夏令時間、日本／韓國／台灣收盤判斷、週六美股、區域batch隔離、調整後OHLC與未收盤排除、VIX/CNN資料驗證、Cloudflare GET/404/403安全流程、實際執行workflow selector檢查GITHUB_ENV換行與美股提早收盤的CNN檢查。
+- 瀏覽器20案例通過（兩引擎各10），新增美國batch不能替過期亞洲資料刷新有效期。
+- 本機研究實抓9個市場5年歷史、每個約1,200筆；亞洲11/6、美股11/5均有值與公式分數；VIX11/5=28.18，CNN418無值。真實樣本外回測仍未執行，不宣稱投資績效。
+- 研究預覽已透過Vite開發模式接到忽略的.private/，公開建置仍只讀web/public；研究截圖也存.private/screenshots，不提交。
+- Cloudflare ZIP已實際產生並檢查根目錄index.html，無原始碼、測試資料、.env或.private。Wrangler4.158.0本機可執行；尚未以Cloudflare帳號登入／上傳，需使用者執行精靈。
+- 獨立review代理完成部分閱讀與22測試後因服務額度停止，未產出完整審查結論；後續由主實作者自行檢查，不能稱完整獨立審閱。

@@ -10,3 +10,6 @@ __pycache__/
 .superpowers/
 .private/
 .DS_Store
+*.tsbuildinfo
+output/
+.wrangler/

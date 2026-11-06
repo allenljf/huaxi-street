@@ -10,6 +10,8 @@ from datetime import date, datetime, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
 from market.engine import Bar, adjust_bars, analyze
+from market.sessions import last_completed_session, selected_market, market_key, SCHEDULE_TEXT, next_update_at
+from market.providers import fetch_yahoo, fetch_vix, fetch_cnn
 
 ROOT=Path(__file__).resolve().parents[1]
 API='https://openapi.twse.com.tw/v1/'
@@ -78,10 +80,10 @@ def fetch_json(path):
 def market_view(meta,bars,expected,record,error):
     latest=bars[-1] if bars else None
     stale=latest is not None and latest.date<expected
-    eligible=bool(latest) and (meta['kind']=='index' or record.get('eventsReviewedThrough','')>=latest.date.isoformat())
-    adjusted=adjust_bars(bars,record.get('events',[])) if eligible else []
+    eligible=bool(latest) and (record.get('priceBasis')=='vendor-adjusted' or meta['kind']=='index' or record.get('eventsReviewedThrough','')>=latest.date.isoformat())
+    adjusted=(bars if record.get('priceBasis')=='vendor-adjusted' else adjust_bars(bars,record.get('events',[]))) if eligible else []
     report=analyze(adjusted)
-    can_score=meta['region']=='tw' and not stale and eligible and len(adjusted)>=400
+    can_score=not stale and eligible and len(adjusted)>=400
     reason='免費分享資料源待確認' if meta['region']!='tw' else f'指標資料累積中 · {len(bars)} / 400 交易日'
     if latest and not eligible: reason='分割／配息調整資料待補齊'
     if stale: reason='行情尚未更新至最近完整交易日'
@@ -97,7 +99,11 @@ def market_view(meta,bars,expected,record,error):
     if latest and official_change.get('date')==latest.date.isoformat():
         reference=latest.close-official_change['value']
         if reference>0: change=100*official_change['value']/reference
-    return {**meta,'sessionDate':latest.date.isoformat() if latest else None,'close':latest.close if latest else None,
+    quote=record.get('quoteSnapshot',{})
+    display_close=latest.close if latest else None
+    if latest and quote.get('date')==latest.date.isoformat():
+        display_close=quote['close'];change=quote.get('changePct')
+    return {**meta,'sessionDate':latest.date.isoformat() if latest else None,'close':display_close,
       'changePct':round(change,2) if change is not None else None,
       'sparkline':[b.close for b in (adjusted if eligible else bars)[-60:]],
       'history':[{'date':b.date.isoformat(),'close':b.close} for b in (adjusted if eligible else bars)[-252:]],
@@ -111,8 +117,9 @@ def market_view(meta,bars,expected,record,error):
       'sourceName':record.get('sourceName','TWSE 開放資料' if meta['region']=='tw' else '官方行情'),
       'licenseNote':record.get('licenseNote','政府資料開放授權條款第1版' if meta['region']=='tw' else '尚未確認公開分享資料源'),
       'dataSourceUrl':record.get('sourceUrl','https://openapi.twse.com.tw/' if meta['region']=='tw' else meta['sourceUrl']),
-      'adjustment':'分割與配息一致調整' if eligible and record.get('events') else '價格指數' if meta['kind']=='index' else '原始收盤價；調整待確認',
-      'expectedSession':expected.isoformat() if meta['region']=='tw' else None}
+      'adjustment':'來源調整後OHLC（分割／配息）' if record.get('priceBasis')=='vendor-adjusted' else '分割與配息一致調整' if eligible and record.get('events') else '價格指數' if meta['kind']=='index' else '原始收盤價；調整待確認',
+      'expectedSession':expected.isoformat(),'lastSuccessfulFetchAt':record.get('lastSuccessfulFetchAt'),
+      'lastAttemptedAt':record.get('lastAttemptedAt'),'sourceError':record.get('lastError')}
 
 
 def write_json(path,obj):
@@ -120,69 +127,111 @@ def write_json(path,obj):
     temp=path.with_suffix('.tmp'); temp.write_text(json.dumps(obj,ensure_ascii=False,indent=2,allow_nan=False)+'\n'); temp.replace(path)
 
 
-def build(now=None, offline=False):
+def build(now=None, offline=False, batch='all', research=False, publish_research=False):
     now=now or datetime.now(ZoneInfo('Asia/Taipei'))
-    storage=ROOT/'data/history.json'; state=json.loads(storage.read_text()) if storage.exists() else {}
-    errors={}; new={}; calendar=ROOT/'data/calendar.json'
-    schedule=json.loads(calendar.read_text()) if calendar.exists() else []
-    if not offline:
+    # Publication is an explicit switch, separate from fetching for research.
+    private=research and not publish_research
+    storage=ROOT/('.private/research-history.json' if private else 'data/history.json')
+    public_history=ROOT/'data/history.json'
+    state=json.loads(storage.read_text()) if storage.exists() else json.loads(public_history.read_text()) if public_history.exists() else {}
+    calendar_file=ROOT/'data/calendar.json'
+    schedule=json.loads(calendar_file.read_text()) if calendar_file.exists() else []
+    errors={};new={};stamp=now.isoformat()
+    if not offline and not research and batch in {'all','asia'}:
         for endpoint,key in [('holidaySchedule/holidaySchedule','calendar'),('indicesReport/MI_5MINS_HIST','taiex'),('exchangeReport/STOCK_DAY_ALL','stocks')]:
             try:
                 payload=fetch_json(endpoint)
-                if not isinstance(payload,list) or not payload: raise ValueError('Empty API response')
+                if not isinstance(payload,list) or not payload:raise ValueError('Empty API response')
                 new[key]=payload
-            except (OSError,ValueError): errors[key]='source unavailable'
-        if 'calendar' in new: schedule=new['calendar']; write_json(calendar,schedule)
+            except (OSError,ValueError):errors[key]='資料來源連線或格式異常'
+        if 'calendar' in new:schedule=new['calendar'];write_json(calendar_file,schedule)
     holidays={parse_date(r['Date']) for r in schedule if not any(t in r.get('Name','') for t in ['開始交易','最後交易'])}
-    expected=expected_session(now,holidays)
-    calendar_ok=any(parse_date(r['Date']).year==expected.year for r in schedule)
+    expected_by_id={m['id']:last_completed_session(market_key(m['id']),now,holidays if m['region']=='tw' else frozenset()) for m in CATALOG}
     for row in new.get('taiex',[]):
         try:
             bar=Bar(parse_date(row['Date']),*[float(row[k].replace(',','')) for k in ['OpeningIndex','HighestIndex','LowestIndex','ClosingIndex']])
             new.setdefault('taiexBars',[]).append(bar)
-        except (ValueError,KeyError): errors['taiex']='invalid data'
+        except (ValueError,KeyError):errors['taiex']='資料格式異常'
     for row in new.get('stocks',[]):
-        if row.get('Code') not in {c['id'] for c in CATALOG}: continue
+        asset=row.get('Code')
+        if asset not in expected_by_id:continue
         try:
             bar=Bar(parse_date(row['Date']),*[float(row[k].replace(',','')) for k in ['OpeningPrice','HighestPrice','LowestPrice','ClosingPrice']])
-            new.setdefault(row['Code']+'Bars',[]).append(bar)
+            new.setdefault(asset+'Bars',[]).append(bar)
             try:
-                difference=float(row['Change'].replace(',',''))
-                if bar.date<=expected:
-                    new.setdefault('quoteChanges',{})[row['Code']]={'date':bar.date.isoformat(),'value':difference}
-            except (KeyError,ValueError): pass
-        except (ValueError,KeyError): errors[row.get('Code')]='invalid data'
+                delta=float(row['Change'].replace(',',''))
+                if bar.date<=expected_by_id[asset]:new.setdefault('quoteChanges',{})[asset]={'date':bar.date.isoformat(),'value':delta}
+            except (KeyError,ValueError):pass
+        except (ValueError,KeyError):errors[asset]='資料格式異常'
     markets=[]
     for meta in CATALOG:
-        record=state.get(meta['id'],{})
-        if meta['id'] in new.get('quoteChanges',{}):
-            record={**record,'quoteChange':new['quoteChanges'][meta['id']]}
-        bars=merge_bars(deserialize(record.get('bars',[])),new.get(meta['id']+'Bars',[]),expected)
-        if meta['region']=='tw' and bars:
-            record={**record,'bars':serialize(bars)}; state[meta['id']]=record
-        error=errors.get('taiex' if meta['id']=='taiex' else 'stocks') or errors.get(meta['id']) if meta['region']=='tw' else None
-        view=market_view(meta,bars,expected,record,error)
-        if meta['region']=='tw' and not calendar_ok:
+        asset=meta['id'];expected=expected_by_id[asset];record=state.get(asset,{})
+        selected=selected_market(asset,batch)
+        error=None
+        if selected and not offline:
+            record={**record,'lastAttemptedAt':stamp}
+            if research:
+                try:
+                    record={**record,**fetch_yahoo(asset,expected),'lastSuccessfulFetchAt':stamp,'lastError':None,'provider':'yahoo'}
+                    record.pop('quoteChange',None)
+                except (OSError,ValueError,KeyError,TypeError):
+                    error='免費研究來源暫時無法更新';record['lastError']=error
+            elif meta['region']=='tw':
+                error=errors.get('taiex' if asset=='taiex' else 'stocks') or errors.get(asset)
+                incoming=new.get(asset+'Bars',[])
+                # Avoid splicing raw OpenAPI prices onto a previously adjusted vendor series.
+                if record.get('priceBasis')=='vendor-adjusted':
+                    record={'bars':[], 'lastAttemptedAt':stamp}
+                bars=merge_bars(deserialize(record.get('bars',[])),incoming,expected)
+                record={**record,'bars':serialize(bars),'lastError':error}
+                if incoming and not error:record['lastSuccessfulFetchAt']=stamp
+                if asset in new.get('quoteChanges',{}):record['quoteChange']=new['quoteChanges'][asset]
+            state[asset]=record
+        bars=merge_bars([],deserialize(record.get('bars',[])),expected)
+        view=market_view(meta,bars,expected,record,error or record.get('lastError'))
+        if meta['region']=='tw' and not research and not any(parse_date(r['Date']).year==expected.year for r in schedule):
             view.update(status='stale',buyScore=None,sellScore=None,confirmed=False,reasons=['交易日曆尚未更新，暫停新評分'])
+        fetched_at=record.get('lastSuccessfulFetchAt')
+        view['nextUpdateAt']=next_update_at(asset,datetime.fromisoformat(fetched_at) if fetched_at else now)
         markets.append(view)
-    write_json(storage,state)
-    output={'version':1,'rulesVersion':'research-v1','generatedAt':now.isoformat(),'expectedTaiwanSession':expected.isoformat(),
-      'scheduleText':'每週一至六 08:00 啟動更新' if os.environ.get('INCLUDE_SATURDAY')=='true' else '每週一至五 08:00 啟動更新',
-      'markets':markets,'sentiment':[
-        {'id':'vix','name':'VIX 波動率','label':'市場的心跳','value':None,'status':'官方來源待確認分享權','url':'https://www.cboe.com/tradable_products/vix/'},
-        {'id':'fear','name':'CNN 恐慌貪婪','label':'情緒的溫度','value':None,'status':'資料端點不穩定，先看官方','url':'https://www.cnn.com/markets/fear-and-greed'}],
-      'research':{'status':'awaiting-history','note':'歷史與公司行動資料未齊，尚未產生真實回測績效。'}}
-    write_json(ROOT/'web/public/data/markets.json',output)
-    print(f"Published {len(markets)} market statuses; {sum(m['close'] is not None for m in markets)} quoted; {sum(m['buyScore'] is not None for m in markets)} scored; {len(errors)} source errors.")
+    sentiment_path=ROOT/('.private/research-sentiment.json' if private else 'data/sentiment.json')
+    sentiment_state=json.loads(sentiment_path.read_text()) if sentiment_path.exists() else {}
+    if research and batch in {'all','us'} and not offline:
+        cutoff=last_completed_session('us',now)
+        for asset,fetcher in [('vix',fetch_vix),('fear',fetch_cnn)]:
+            previous=sentiment_state.get(asset,{})
+            try:sentiment_state[asset]={**fetcher(cutoff),'lastSuccessfulFetchAt':stamp,'lastAttemptedAt':stamp}
+            except (OSError,ValueError,KeyError,TypeError):
+                sentiment_state[asset]={**previous,'lastAttemptedAt':stamp,'status':'資料來源暫時無法更新；保留前值' if previous.get('value') is not None else '資料來源暫時無法取得'}
+    defaults=[{'id':'vix','name':'VIX 波動率','label':'市場的心跳','value':None,'status':'官方來源待確認分享權','url':'https://www.cboe.com/tradable_products/vix/'},
+      {'id':'fear','name':'CNN 恐慌貪婪','label':'情緒的溫度','value':None,'status':'資料端點不穩定，先看官方','url':'https://www.cnn.com/markets/fear-and-greed'}]
+    sentiment=[{**d,**sentiment_state.get(d['id'],{})} for d in defaults]
+    write_json(storage,state);write_json(sentiment_path,sentiment_state)
+    output={'version':1,'rulesVersion':'research-v1','generatedAt':stamp,'expectedTaiwanSession':expected_by_id['taiex'].isoformat(),
+      'scheduleText':SCHEDULE_TEXT,'lastBatch':batch,'researchSources':research,'privateResearch':private,
+      'markets':markets,'sentiment':sentiment,
+      'research':{'status':'research-only' if any(m['buyScore'] is not None for m in markets) else 'awaiting-history',
+        'note':'技術指標採固定研究規則；尚未產生真實樣本外回測績效。'}}
+    write_json(ROOT/('.private/markets.json' if private else 'web/public/data/markets.json'),output)
+    print(f"{'PRIVATE research' if private else 'Public'} / {batch}: {sum(m['close'] is not None for m in markets)} quotes, {sum(m['buyScore'] is not None for m in markets)} scores, {sum(m['status']=='stale' for m in markets)} stale.")
     return output
 
 
 def main():
-    parser=argparse.ArgumentParser(); parser.add_argument('--offline',action='store_true'); parser.add_argument('--import-bundle',type=Path)
+    parser=argparse.ArgumentParser()
+    parser.add_argument('--offline',action='store_true');parser.add_argument('--import-bundle',type=Path)
+    parser.add_argument('--batch',choices=['asia','us','all'],default='all')
+    parser.add_argument('--research',action='store_true',help='Fetch free research providers into ignored .private by default')
+    parser.add_argument('--publish-research',action='store_true',help='Explicitly publish chosen research-source data; does not grant data rights')
     args=parser.parse_args()
     if args.import_bundle:
-        bundle=import_bundle(json.loads(args.import_bundle.read_text())); path=ROOT/'data/history.json'
-        state=json.loads(path.read_text()) if path.exists() else {}; state[bundle['id']]=bundle; write_json(path,state)
-    build(offline=args.offline)
+        bundle=import_bundle(json.loads(args.import_bundle.read_text()));path=ROOT/'data/history.json'
+        state=json.loads(path.read_text()) if path.exists() else {};state[bundle['id']]=bundle;write_json(path,state)
+    settings_path=ROOT/'data/provider-settings.json'
+    settings=json.loads(settings_path.read_text()) if settings_path.exists() else {}
+    research=args.research or (os.environ.get('ENABLE_RESEARCH_SOURCES')=='true' if os.environ.get('ENABLE_RESEARCH_SOURCES') else settings.get('enableResearch',False))
+    publish=args.publish_research or (os.environ.get('PUBLISH_RESEARCH_SOURCES')=='true' if os.environ.get('PUBLISH_RESEARCH_SOURCES') else settings.get('publishResearch',False))
+    if publish and not research:parser.error('--publish-research requires --research')
+    build(offline=args.offline,batch=args.batch,research=research,publish_research=publish)
 
-if __name__=='__main__': main()
+if __name__=='__main__':main()

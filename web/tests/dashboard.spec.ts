@@ -29,6 +29,7 @@ test('dialog has tabs, traps focus and restores original trigger',async({page})=
  await trigger.click();
  const dialog=page.getByRole('dialog');
  await expect(dialog).toHaveAccessibleName('台灣加權・陪葬攻略');
+ await expect(dialog.getByRole('img',{name:'最近2筆收盤走勢，上升'})).toBeVisible();
  await page.getByRole('tab',{name:'訊號'}).click();
  await expect(dialog).toContainText('RSI 32.00');
  for(let i=0;i<15;i++) await page.keyboard.press('Tab');
@@ -89,4 +90,17 @@ test('malformed numbers fail visibly instead of showing invalid financial data',
  await page.route('**/data/markets.json',route=>route.fulfill({json:broken}));
  await page.reload();
  await expect(page.getByRole('alert')).toContainText('暫時讀不到市場筆記');
+});
+
+test('new US batch cannot renew an overdue Asian market snapshot',async({page})=>{
+ const changed=structuredClone(fixture) as any;
+ changed.generatedAt='2026-11-07T08:01:00+08:00';
+ changed.markets[0].nextUpdateAt='2026-11-06T16:00:00+08:00';
+ const us={...structuredClone(changed.markets[0]),id:'sp500',symbol:'SPX',name:'標普500',region:'us',nextUpdateAt:'2026-11-10T08:00:00+08:00'};
+ changed.markets[2]=us;
+ await page.clock.setFixedTime(new Date('2026-11-07T08:15:00+08:00'));
+ await page.route('**/data/markets.json',route=>route.fulfill({json:changed}));await page.reload();
+ await expect(page.getByTestId('market-taiex')).toContainText('已超過此市場預定更新時段');
+ await expect(page.getByTestId('market-taiex')).not.toContainText('7.6');
+ await expect(page.getByTestId('market-sp500')).toContainText('7.6');
 });

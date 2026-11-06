@@ -1,0 +1,5 @@
+{
+  "enableResearch": false,
+  "publishResearch": false,
+  "note": "Free research providers can be fetched locally with --research. Publication is a separate explicit choice and does not grant data rights."
+}

@@ -29,7 +29,10 @@
         "low": 41513.57,
         "close": 41574.72
       }
-    ]
+    ],
+    "lastAttemptedAt": "2026-11-06T18:56:48.590439+08:00",
+    "lastError": null,
+    "lastSuccessfulFetchAt": "2026-11-06T18:56:48.590439+08:00"
   },
   "2330": {
     "bars": [
@@ -44,7 +47,10 @@
     "quoteChange": {
       "date": "2026-11-05",
       "value": -20.0
-    }
+    },
+    "lastAttemptedAt": "2026-11-06T18:56:48.590439+08:00",
+    "lastError": null,
+    "lastSuccessfulFetchAt": "2026-11-06T18:56:48.590439+08:00"
   },
   "0050": {
     "bars": [
@@ -59,7 +65,10 @@
     "quoteChange": {
       "date": "2026-11-05",
       "value": -2.7
-    }
+    },
+    "lastAttemptedAt": "2026-11-06T18:56:48.590439+08:00",
+    "lastError": null,
+    "lastSuccessfulFetchAt": "2026-11-06T18:56:48.590439+08:00"
   },
   "00631L": {
     "bars": [
@@ -74,7 +83,10 @@
     "quoteChange": {
       "date": "2026-11-05",
       "value": -1.64
-    }
+    },
+    "lastAttemptedAt": "2026-11-06T18:56:48.590439+08:00",
+    "lastError": null,
+    "lastSuccessfulFetchAt": "2026-11-06T18:56:48.590439+08:00"
   },
   "00685L": {
     "bars": [
@@ -89,6 +101,21 @@
     "quoteChange": {
       "date": "2026-11-05",
       "value": -0.64
-    }
+    },
+    "lastAttemptedAt": "2026-11-06T18:56:48.590439+08:00",
+    "lastError": null,
+    "lastSuccessfulFetchAt": "2026-11-06T18:56:48.590439+08:00"
+  },
+  "sp500": {
+    "lastAttemptedAt": "2026-11-06T18:56:48.590439+08:00"
+  },
+  "nasdaq": {
+    "lastAttemptedAt": "2026-11-06T18:56:48.590439+08:00"
+  },
+  "kospi": {
+    "lastAttemptedAt": "2026-11-06T18:56:48.590439+08:00"
+  },
+  "nikkei": {
+    "lastAttemptedAt": "2026-11-06T18:56:48.590439+08:00"
   }
 }
