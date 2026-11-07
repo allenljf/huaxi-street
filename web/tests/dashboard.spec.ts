@@ -10,8 +10,8 @@ test.beforeEach(async ({page})=>{
 test('score directions, unavailable data and leveraged risk are visible',async({page})=>{
  const taiwan=page.getByTestId('market-taiex');
  await expect(taiwan).toContainText('7.6');
- await expect(taiwan).toContainText('陪葬訊號集結，分批入席');
- await expect(page.getByTestId('market-0050')).toContainText('躲噴警報，檢查減碼節奏');
+ await expect(taiwan).toContainText('買進訊號集結，可考慮分批投入');
+ await expect(page.getByTestId('market-0050')).toContainText('賣出訊號偏強，檢查減碼節奏');
  const unavailable=page.getByTestId('market-sp500');
  await expect(unavailable).toContainText('暫不評分');
  await expect(unavailable).not.toContainText('0.0');
@@ -25,10 +25,10 @@ test('filters display the selected markets',async({page})=>{
 });
 
 test('dialog has tabs, traps focus and restores original trigger',async({page})=>{
- const trigger=page.getByTestId('market-taiex').getByRole('button',{name:'看陪葬攻略'});
+ const trigger=page.getByTestId('market-taiex').getByRole('button',{name:'查看指標詳情'});
  await trigger.click();
  const dialog=page.getByRole('dialog');
- await expect(dialog).toHaveAccessibleName('台灣加權・陪葬攻略');
+ await expect(dialog).toHaveAccessibleName('台灣加權・指標詳情');
  await expect(dialog.getByRole('img',{name:'最近2筆收盤走勢，上升'})).toBeVisible();
  await page.getByRole('tab',{name:'訊號'}).click();
  await expect(dialog).toContainText('RSI 32.00');
@@ -43,7 +43,7 @@ test('mobile text zoom does not overflow and dialog can close',async({page})=>{
  await page.setViewportSize({width:320,height:720});
  await page.addStyleTag({content:'html { font-size: 200%; }'});
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth)).toBeTruthy();
- await page.getByTestId('market-taiex').getByRole('button',{name:'看陪葬攻略'}).click();
+ await page.getByTestId('market-taiex').getByRole('button',{name:'查看指標詳情'}).click();
  await page.getByRole('button',{name:'關閉視窗'}).click();
  await expect(page.getByRole('dialog')).not.toBeVisible();
 });
@@ -54,7 +54,7 @@ test('no backdrop support and reduced motion preserve content',async({page})=>{
  await page.getByRole('button',{name:'這分數怎麼來的？'}).click();
  await expect(page.getByRole('dialog')).toContainText('分數不是獲利機率');
  await page.getByRole('button',{name:'關閉視窗'}).click();
- await expect(page.getByRole('heading',{name:'陪葬! 華西街',exact:true})).toBeVisible();
+ await expect(page.getByRole('heading',{name:'長期投資買進賣出參考指標',exact:true})).toBeVisible();
 });
 
 test('pending confirmation, conflicts and stale scores never imply a confirmed action',async({page})=>{
@@ -64,7 +64,7 @@ test('pending confirmation, conflicts and stale scores never imply a confirmed a
  await page.route('**/data/markets.json',route=>route.fulfill({json:altered}));
  await page.reload();
  await expect(page.getByTestId('market-taiex')).toContainText('訊號待確認');
- await expect(page.getByTestId('market-0050')).toContainText('陪葬、躲噴各有說法');
+ await expect(page.getByTestId('market-0050')).toContainText('買進、賣出訊號並存');
  await expect(page.getByTestId('market-00631L')).toContainText('暫不評分');
 });
 

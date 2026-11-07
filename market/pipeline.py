@@ -89,7 +89,7 @@ def market_view(meta,bars,expected,record,error):
     if stale: reason='行情尚未更新至最近完整交易日'
     if can_score:
         reason='長期趨勢與進場節奏綜合觀察'
-        if report['cap']<10: reason=f"長期趨勢偏弱，陪葬分上限 {report['cap']}"
+        if report['cap']<10: reason=f"長期趨勢偏弱，買進分上限 {report['cap']}"
     if error: reason='更新未完成，顯示上次成功資料' if latest else '資料來源暫時無法連線'
     change=(latest.close/bars[-2].close-1)*100 if len(bars)>1 else None
     if len(bars)>1 and eligible:

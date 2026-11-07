@@ -57,7 +57,7 @@ def simulate(bars,signals,mode,fee_rate=.001425,minimum_fee=0,slippage=.0005):
     return {'strategy':mode,'contributions':contributions,'endingValue':round(final,2),'cash':round(cash,2),
       'timeWeightedReturn':round((curve[-1]-1)*100,4) if curve else 0,'maxDrawdown':round(drawdown*100,4),
       'xirr':xirr(flows),'transactions':transactions,'samples':len(bars),'cashflowCount':len(flows)-1,
-      'assumptions':'研究示例；零股／小數單位、配息即時再投入、現金利息0、不執行躲噴交易。費率與滑價為可調研究假設，非個人券商報價。'}
+      'assumptions':'研究示例；零股／小數單位、配息即時再投入、現金利息0、不執行賣出交易。費率與滑價為可調研究假設，非個人券商報價。'}
 
 
 def run(asset):
