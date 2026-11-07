@@ -7,11 +7,11 @@
     "sessionDate": "2026-11-05",
     "status": "來源更新落後",
     "url": "https://www.cboe.com/tradable_products/vix/",
-    "lastSuccessfulFetchAt": "2026-11-07T10:15:21.467396+08:00",
-    "lastAttemptedAt": "2026-11-07T10:15:21.467396+08:00"
+    "lastSuccessfulFetchAt": "2026-11-07T10:22:20.045241+08:00",
+    "lastAttemptedAt": "2026-11-07T10:22:20.045241+08:00"
   },
   "fear": {
-    "lastAttemptedAt": "2026-11-07T10:15:21.467396+08:00",
+    "lastAttemptedAt": "2026-11-07T10:22:20.045241+08:00",
     "status": "資料來源暫時無法取得"
   }
 }
