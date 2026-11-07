@@ -42522,7 +42522,7 @@
     "provider": "yahoo"
   },
   "sp500": {
-    "lastAttemptedAt": "2026-11-07T10:23:56.008137+08:00",
+    "lastAttemptedAt": "2026-11-07T11:47:07.698767+08:00",
     "bars": [
       {
         "date": "2021-11-08",
@@ -51321,12 +51321,12 @@
     "sourceName": "Yahoo Finance · 免費研究來源",
     "sourceUrl": "https://finance.yahoo.com/",
     "licenseNote": "Yahoo資料使用條款適用；接入或使用者選擇不代表取得再散布授權。",
-    "lastSuccessfulFetchAt": "2026-11-07T10:23:56.008137+08:00",
+    "lastSuccessfulFetchAt": "2026-11-07T11:47:07.698767+08:00",
     "lastError": null,
     "provider": "yahoo"
   },
   "nasdaq": {
-    "lastAttemptedAt": "2026-11-07T10:23:56.008137+08:00",
+    "lastAttemptedAt": "2026-11-07T11:47:07.698767+08:00",
     "bars": [
       {
         "date": "2021-11-08",
@@ -60125,7 +60125,7 @@
     "sourceName": "Yahoo Finance · 免費研究來源",
     "sourceUrl": "https://finance.yahoo.com/",
     "licenseNote": "Yahoo資料使用條款適用；接入或使用者選擇不代表取得再散布授權。",
-    "lastSuccessfulFetchAt": "2026-11-07T10:23:56.008137+08:00",
+    "lastSuccessfulFetchAt": "2026-11-07T11:47:07.698767+08:00",
     "lastError": null,
     "provider": "yahoo"
   },

@@ -1,10 +1,10 @@
 {
   "version": 1,
   "rulesVersion": "research-v1",
-  "generatedAt": "2026-11-07T10:23:56.008137+08:00",
+  "generatedAt": "2026-11-07T11:47:07.698767+08:00",
   "expectedTaiwanSession": "2026-11-06",
   "scheduleText": "亞洲 週一至五 16:00 · 美國 週二至六 08:00（台北時間）",
-  "lastBatch": "all",
+  "lastBatch": "us",
   "researchSources": true,
   "privateResearch": false,
   "markets": [
@@ -6829,8 +6829,8 @@
       "dataSourceUrl": "https://finance.yahoo.com/",
       "adjustment": "來源調整後OHLC（分割／配息）",
       "expectedSession": "2026-11-06",
-      "lastSuccessfulFetchAt": "2026-11-07T10:23:56.008137+08:00",
-      "lastAttemptedAt": "2026-11-07T10:23:56.008137+08:00",
+      "lastSuccessfulFetchAt": "2026-11-07T11:47:07.698767+08:00",
+      "lastAttemptedAt": "2026-11-07T11:47:07.698767+08:00",
       "sourceError": null,
       "nextUpdateAt": "2026-11-10T08:00:00+08:00"
     },
@@ -7983,8 +7983,8 @@
       "dataSourceUrl": "https://finance.yahoo.com/",
       "adjustment": "來源調整後OHLC（分割／配息）",
       "expectedSession": "2026-11-06",
-      "lastSuccessfulFetchAt": "2026-11-07T10:23:56.008137+08:00",
-      "lastAttemptedAt": "2026-11-07T10:23:56.008137+08:00",
+      "lastSuccessfulFetchAt": "2026-11-07T11:47:07.698767+08:00",
+      "lastAttemptedAt": "2026-11-07T11:47:07.698767+08:00",
       "sourceError": null,
       "nextUpdateAt": "2026-11-10T08:00:00+08:00"
     },
@@ -10302,12 +10302,12 @@
       "id": "vix",
       "name": "VIX 波動率",
       "label": "市場的心跳",
-      "value": 28.18,
-      "status": "來源更新落後",
+      "value": 25.64,
+      "status": "已收盤",
       "url": "https://www.cboe.com/tradable_products/vix/",
-      "sessionDate": "2026-11-05",
-      "lastSuccessfulFetchAt": "2026-11-07T10:23:56.008137+08:00",
-      "lastAttemptedAt": "2026-11-07T10:23:56.008137+08:00"
+      "sessionDate": "2026-11-06",
+      "lastSuccessfulFetchAt": "2026-11-07T11:47:07.698767+08:00",
+      "lastAttemptedAt": "2026-11-07T11:47:07.698767+08:00"
     },
     {
       "id": "fear",
@@ -10316,7 +10316,7 @@
       "value": null,
       "status": "資料來源暫時無法取得",
       "url": "https://www.cnn.com/markets/fear-and-greed",
-      "lastAttemptedAt": "2026-11-07T10:23:56.008137+08:00"
+      "lastAttemptedAt": "2026-11-07T11:47:07.698767+08:00"
     }
   ],
   "research": {
