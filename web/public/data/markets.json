@@ -1,10 +1,10 @@
 {
   "version": 1,
   "rulesVersion": "research-v1",
-  "generatedAt": "2026-11-14T12:06:52.730302+08:00",
-  "expectedTaiwanSession": "2026-11-13",
+  "generatedAt": "2026-11-17T01:40:03.223540+08:00",
+  "expectedTaiwanSession": "2026-11-16",
   "scheduleText": "亞洲 週一至五 16:00 · 美國 週二至六 08:00（台北時間）",
-  "lastBatch": "us",
+  "lastBatch": "asia",
   "researchSources": true,
   "privateResearch": false,
   "markets": [
@@ -1091,76 +1091,27 @@
           "close": 43675.12109375
         }
       ],
-      "buyScore": 7.0,
-      "sellScore": 3.7,
+      "buyScore": null,
+      "sellScore": null,
       "confirmed": false,
       "leveraged": false,
-      "status": "fresh",
-      "dataCount": 1212,
-      "scoreStatus": "ready",
+      "status": "stale",
+      "dataCount": 1211,
+      "scoreStatus": "warming",
       "reasons": [
-        "長期趨勢與進場節奏綜合觀察"
+        "行情尚未更新至最近完整交易日"
       ],
-      "details": [
-        {
-          "name": "長期均線",
-          "buyScore": 8,
-          "sellScore": 2,
-          "value": "SMA50 46375.94 · SMA200 41331.21"
-        },
-        {
-          "name": "高點回落",
-          "buyScore": 8,
-          "sellScore": null,
-          "value": "距252日高點 −12.34%"
-        },
-        {
-          "name": "RSI (14)",
-          "buyScore": 6,
-          "sellScore": 5,
-          "value": "RSI 44.96"
-        },
-        {
-          "name": "KD (9, 1/3)",
-          "buyScore": 6,
-          "sellScore": 5,
-          "value": "K 65.96 · D 48.30"
-        },
-        {
-          "name": "布林通道 (20, 2)",
-          "buyScore": 5,
-          "sellScore": 5,
-          "value": "下軌 40350.07 · 上軌 48918.73"
-        },
-        {
-          "name": "MACD (12, 26, 9)",
-          "buyScore": 4,
-          "sellScore": 6,
-          "value": "Histogram -64.814"
-        },
-        {
-          "name": "ADX / DMI (14)",
-          "buyScore": null,
-          "sellScore": null,
-          "value": "ADX 33.50 · +DI 21.71 · −DI 33.91"
-        },
-        {
-          "name": "ATR 波動率 (14)",
-          "buyScore": null,
-          "sellScore": null,
-          "value": "ATR / 收盤 3.19%"
-        }
-      ],
+      "details": [],
       "cross": null,
       "sourceName": "Yahoo Finance · 免費研究來源",
       "licenseNote": "Yahoo資料使用條款適用；接入或使用者選擇不代表取得再散布授權。",
       "dataSourceUrl": "https://finance.yahoo.com/",
       "adjustment": "來源調整後OHLC（分割／配息）",
-      "expectedSession": "2026-11-13",
-      "lastSuccessfulFetchAt": "2026-11-13T23:46:37.108528+08:00",
-      "lastAttemptedAt": "2026-11-13T23:46:37.108528+08:00",
+      "expectedSession": "2026-11-16",
+      "lastSuccessfulFetchAt": "2026-11-17T01:40:03.223540+08:00",
+      "lastAttemptedAt": "2026-11-17T01:40:03.223540+08:00",
       "sourceError": null,
-      "nextUpdateAt": "2026-11-16T16:00:00+08:00"
+      "nextUpdateAt": "2026-11-17T16:00:00+08:00"
     },
     {
       "id": "2330",
@@ -1254,7 +1205,7 @@
         },
         {
           "date": "2025-11-06",
-          "close": 1447.2520751953125
+          "close": 1447.251953125
         },
         {
           "date": "2025-11-07",
@@ -1262,15 +1213,15 @@
         },
         {
           "date": "2025-11-10",
-          "close": 1457.1307373046875
+          "close": 1457.130615234375
         },
         {
           "date": "2025-11-11",
-          "close": 1447.2520751953125
+          "close": 1447.251953125
         },
         {
           "date": "2025-11-12",
-          "close": 1457.1307373046875
+          "close": 1457.130615234375
         },
         {
           "date": "2025-11-13",
@@ -1278,11 +1229,11 @@
         },
         {
           "date": "2025-11-14",
-          "close": 1412.6759033203125
+          "close": 1412.676025390625
         },
         {
           "date": "2025-11-17",
-          "close": 1427.494384765625
+          "close": 1427.4942626953125
         },
         {
           "date": "2025-11-18",
@@ -1290,7 +1241,7 @@
         },
         {
           "date": "2025-11-19",
-          "close": 1378.0999755859375
+          "close": 1378.099853515625
         },
         {
           "date": "2025-11-20",
@@ -1298,7 +1249,7 @@
         },
         {
           "date": "2025-11-21",
-          "close": 1368.2210693359375
+          "close": 1368.22119140625
         },
         {
           "date": "2025-11-24",
@@ -1306,19 +1257,19 @@
         },
         {
           "date": "2025-11-25",
-          "close": 1397.857666015625
+          "close": 1397.8577880859375
         },
         {
           "date": "2025-11-26",
-          "close": 1422.5546875
+          "close": 1422.5548095703125
         },
         {
           "date": "2025-11-27",
-          "close": 1417.6153564453125
+          "close": 1417.615478515625
         },
         {
           "date": "2025-11-28",
-          "close": 1422.5546875
+          "close": 1422.5548095703125
         },
         {
           "date": "2025-12-01",
@@ -1326,7 +1277,7 @@
         },
         {
           "date": "2025-12-02",
-          "close": 1412.6759033203125
+          "close": 1412.676025390625
         },
         {
           "date": "2025-12-03",
@@ -1334,7 +1285,7 @@
         },
         {
           "date": "2025-12-04",
-          "close": 1427.494384765625
+          "close": 1427.4942626953125
         },
         {
           "date": "2025-12-05",
@@ -1342,7 +1293,7 @@
         },
         {
           "date": "2025-12-08",
-          "close": 1476.8885498046875
+          "close": 1476.888427734375
         },
         {
           "date": "2025-12-09",
@@ -1362,43 +1313,43 @@
         },
         {
           "date": "2025-12-15",
-          "close": 1437.20849609375
+          "close": 1437.2083740234375
         },
         {
           "date": "2025-12-16",
-          "close": 1422.340576171875
+          "close": 1422.3406982421875
         },
         {
           "date": "2025-12-17",
-          "close": 1417.384765625
+          "close": 1417.3848876953125
         },
         {
           "date": "2025-12-18",
-          "close": 1417.384765625
+          "close": 1417.3848876953125
         },
         {
           "date": "2025-12-19",
-          "close": 1417.384765625
+          "close": 1417.3848876953125
         },
         {
           "date": "2025-12-22",
-          "close": 1452.076171875
+          "close": 1452.0760498046875
         },
         {
           "date": "2025-12-23",
-          "close": 1476.8555908203125
+          "close": 1476.85546875
         },
         {
           "date": "2025-12-24",
-          "close": 1481.8115234375
+          "close": 1481.8114013671875
         },
         {
           "date": "2025-12-26",
-          "close": 1496.6790771484375
+          "close": 1496.678955078125
         },
         {
           "date": "2025-12-29",
-          "close": 1516.502685546875
+          "close": 1516.5028076171875
         },
         {
           "date": "2025-12-30",
@@ -1410,7 +1361,7 @@
         },
         {
           "date": "2026-01-02",
-          "close": 1571.017578125
+          "close": 1571.0174560546875
         },
         {
           "date": "2026-01-05",
@@ -1430,7 +1381,7 @@
         },
         {
           "date": "2026-01-09",
-          "close": 1665.1793212890625
+          "close": 1665.179443359375
         },
         {
           "date": "2026-01-12",
@@ -1438,11 +1389,11 @@
         },
         {
           "date": "2026-01-13",
-          "close": 1694.9146728515625
+          "close": 1694.914794921875
         },
         {
           "date": "2026-01-14",
-          "close": 1694.9146728515625
+          "close": 1694.914794921875
         },
         {
           "date": "2026-01-15",
@@ -1474,11 +1425,11 @@
         },
         {
           "date": "2026-01-26",
-          "close": 1739.5177001953125
+          "close": 1739.517822265625
         },
         {
           "date": "2026-01-27",
-          "close": 1764.29736328125
+          "close": 1764.2972412109375
         },
         {
           "date": "2026-01-28",
@@ -1494,7 +1445,7 @@
         },
         {
           "date": "2026-02-02",
-          "close": 1749.4295654296875
+          "close": 1749.429443359375
         },
         {
           "date": "2026-02-03",
@@ -1502,15 +1453,15 @@
         },
         {
           "date": "2026-02-04",
-          "close": 1769.253173828125
+          "close": 1769.2530517578125
         },
         {
           "date": "2026-02-05",
-          "close": 1749.4295654296875
+          "close": 1749.429443359375
         },
         {
           "date": "2026-02-06",
-          "close": 1764.29736328125
+          "close": 1764.2972412109375
         },
         {
           "date": "2026-02-09",
@@ -1518,7 +1469,7 @@
         },
         {
           "date": "2026-02-10",
-          "close": 1863.4150390625
+          "close": 1863.4149169921875
         },
         {
           "date": "2026-02-11",
@@ -1526,11 +1477,11 @@
         },
         {
           "date": "2026-02-23",
-          "close": 1883.2386474609375
+          "close": 1883.238525390625
         },
         {
           "date": "2026-02-24",
-          "close": 1947.6651611328125
+          "close": 1947.665283203125
         },
         {
           "date": "2026-02-25",
@@ -1554,7 +1505,7 @@
         },
         {
           "date": "2026-03-05",
-          "close": 1883.2386474609375
+          "close": 1883.238525390625
         },
         {
           "date": "2026-03-06",
@@ -1562,7 +1513,7 @@
         },
         {
           "date": "2026-03-09",
-          "close": 1794.0325927734375
+          "close": 1794.032470703125
         },
         {
           "date": "2026-03-10",
@@ -1574,7 +1525,7 @@
         },
         {
           "date": "2026-03-12",
-          "close": 1868.3709716796875
+          "close": 1868.370849609375
         },
         {
           "date": "2026-03-13",
@@ -1598,15 +1549,15 @@
         },
         {
           "date": "2026-03-20",
-          "close": 1829.71826171875
+          "close": 1829.7181396484375
         },
         {
           "date": "2026-03-23",
-          "close": 1799.8858642578125
+          "close": 1799.8857421875
         },
         {
           "date": "2026-03-24",
-          "close": 1799.8858642578125
+          "close": 1799.8857421875
         },
         {
           "date": "2026-03-25",
@@ -1614,7 +1565,7 @@
         },
         {
           "date": "2026-03-26",
-          "close": 1829.71826171875
+          "close": 1829.7181396484375
         },
         {
           "date": "2026-03-27",
@@ -1622,7 +1573,7 @@
         },
         {
           "date": "2026-03-30",
-          "close": 1770.0535888671875
+          "close": 1770.053466796875
         },
         {
           "date": "2026-03-31",
@@ -1630,11 +1581,11 @@
         },
         {
           "date": "2026-04-01",
-          "close": 1844.6343994140625
+          "close": 1844.63427734375
         },
         {
           "date": "2026-04-02",
-          "close": 1799.8858642578125
+          "close": 1799.8857421875
         },
         {
           "date": "2026-04-07",
@@ -1654,15 +1605,15 @@
         },
         {
           "date": "2026-04-13",
-          "close": 1978.8800048828125
+          "close": 1978.880126953125
         },
         {
           "date": "2026-04-14",
-          "close": 2043.516845703125
+          "close": 2043.5167236328125
         },
         {
           "date": "2026-04-15",
-          "close": 2068.376953125
+          "close": 2068.377197265625
         },
         {
           "date": "2026-04-16",
@@ -1678,19 +1629,19 @@
         },
         {
           "date": "2026-04-21",
-          "close": 2038.544677734375
+          "close": 2038.5447998046875
         },
         {
           "date": "2026-04-22",
-          "close": 2038.544677734375
+          "close": 2038.5447998046875
         },
         {
           "date": "2026-04-23",
-          "close": 2068.376953125
+          "close": 2068.377197265625
         },
         {
           "date": "2026-04-24",
-          "close": 2172.790283203125
+          "close": 2172.79052734375
         },
         {
           "date": "2026-04-27",
@@ -1702,7 +1653,7 @@
         },
         {
           "date": "2026-04-29",
-          "close": 2167.818115234375
+          "close": 2167.818359375
         },
         {
           "date": "2026-04-30",
@@ -1710,19 +1661,19 @@
         },
         {
           "date": "2026-05-04",
-          "close": 2262.287353515625
+          "close": 2262.28759765625
         },
         {
           "date": "2026-05-05",
-          "close": 2237.42724609375
+          "close": 2237.427001953125
         },
         {
           "date": "2026-05-06",
-          "close": 2237.42724609375
+          "close": 2237.427001953125
         },
         {
           "date": "2026-05-07",
-          "close": 2297.092041015625
+          "close": 2297.091796875
         },
         {
           "date": "2026-05-08",
@@ -1730,7 +1681,7 @@
         },
         {
           "date": "2026-05-11",
-          "close": 2222.510986328125
+          "close": 2222.5107421875
         },
         {
           "date": "2026-05-12",
@@ -1750,19 +1701,19 @@
         },
         {
           "date": "2026-05-18",
-          "close": 2227.483154296875
+          "close": 2227.48291015625
         },
         {
           "date": "2026-05-19",
-          "close": 2192.6787109375
+          "close": 2192.678466796875
         },
         {
           "date": "2026-05-20",
-          "close": 2172.790283203125
+          "close": 2172.79052734375
         },
         {
           "date": "2026-05-21",
-          "close": 2217.538818359375
+          "close": 2217.5390625
         },
         {
           "date": "2026-05-22",
@@ -1770,7 +1721,7 @@
         },
         {
           "date": "2026-05-25",
-          "close": 2297.092041015625
+          "close": 2297.091796875
         },
         {
           "date": "2026-05-26",
@@ -1778,19 +1729,19 @@
         },
         {
           "date": "2026-05-27",
-          "close": 2287.14794921875
+          "close": 2287.147705078125
         },
         {
           "date": "2026-05-28",
-          "close": 2282.17578125
+          "close": 2282.175537109375
         },
         {
           "date": "2026-05-29",
-          "close": 2341.84033203125
+          "close": 2341.840576171875
         },
         {
           "date": "2026-06-01",
-          "close": 2341.84033203125
+          "close": 2341.840576171875
         },
         {
           "date": "2026-06-02",
@@ -1802,15 +1753,15 @@
         },
         {
           "date": "2026-06-04",
-          "close": 2371.672607421875
+          "close": 2371.6728515625
         },
         {
           "date": "2026-06-05",
-          "close": 2351.784423828125
+          "close": 2351.78466796875
         },
         {
           "date": "2026-06-08",
-          "close": 2282.17578125
+          "close": 2282.175537109375
         },
         {
           "date": "2026-06-09",
@@ -2245,76 +2196,27 @@
           "close": 2350.0
         }
       ],
-      "buyScore": 6.9,
-      "sellScore": 2.9,
+      "buyScore": null,
+      "sellScore": null,
       "confirmed": false,
       "leveraged": false,
-      "status": "fresh",
-      "dataCount": 1212,
-      "scoreStatus": "ready",
+      "status": "stale",
+      "dataCount": 1211,
+      "scoreStatus": "warming",
       "reasons": [
-        "長期趨勢與進場節奏綜合觀察"
+        "行情尚未更新至最近完整交易日"
       ],
-      "details": [
-        {
-          "name": "長期均線",
-          "buyScore": 8,
-          "sellScore": 2,
-          "value": "SMA50 2417.54 · SMA200 2211.82"
-        },
-        {
-          "name": "高點回落",
-          "buyScore": 6,
-          "sellScore": null,
-          "value": "距252日高點 −9.09%"
-        },
-        {
-          "name": "RSI (14)",
-          "buyScore": 6,
-          "sellScore": 5,
-          "value": "RSI 48.84"
-        },
-        {
-          "name": "KD (9, 1/3)",
-          "buyScore": 6,
-          "sellScore": 5,
-          "value": "K 75.34 · D 57.82"
-        },
-        {
-          "name": "布林通道 (20, 2)",
-          "buyScore": 5,
-          "sellScore": 5,
-          "value": "下軌 2189.33 · 上軌 2501.67"
-        },
-        {
-          "name": "MACD (12, 26, 9)",
-          "buyScore": 8,
-          "sellScore": 2,
-          "value": "Histogram 5.409"
-        },
-        {
-          "name": "ADX / DMI (14)",
-          "buyScore": null,
-          "sellScore": null,
-          "value": "ADX 23.50 · +DI 24.94 · −DI 32.31"
-        },
-        {
-          "name": "ATR 波動率 (14)",
-          "buyScore": null,
-          "sellScore": null,
-          "value": "ATR / 收盤 2.75%"
-        }
-      ],
+      "details": [],
       "cross": null,
       "sourceName": "Yahoo Finance · 免費研究來源",
       "licenseNote": "Yahoo資料使用條款適用；接入或使用者選擇不代表取得再散布授權。",
       "dataSourceUrl": "https://finance.yahoo.com/",
       "adjustment": "來源調整後OHLC（分割／配息）",
-      "expectedSession": "2026-11-13",
-      "lastSuccessfulFetchAt": "2026-11-13T23:46:37.108528+08:00",
-      "lastAttemptedAt": "2026-11-13T23:46:37.108528+08:00",
+      "expectedSession": "2026-11-16",
+      "lastSuccessfulFetchAt": "2026-11-17T01:40:03.223540+08:00",
+      "lastAttemptedAt": "2026-11-17T01:40:03.223540+08:00",
       "sourceError": null,
-      "nextUpdateAt": "2026-11-16T16:00:00+08:00"
+      "nextUpdateAt": "2026-11-17T16:00:00+08:00"
     },
     {
       "id": "0050",
@@ -2324,11 +2226,10 @@
       "region": "tw",
       "kind": "etf",
       "sourceUrl": "https://www.yuantaetfs.com/product/detail/0050/Basic_information",
-      "sessionDate": "2026-11-13",
-      "close": 102.5,
-      "changePct": 1.54,
+      "sessionDate": "2026-11-16",
+      "close": 96.44999694824219,
+      "changePct": -5.9,
       "sparkline": [
-        104.9000015258789,
         103.0999984741211,
         103.80000305175781,
         104.6500015258789,
@@ -2387,13 +2288,10 @@
         99.69999694824219,
         103.19999694824219,
         100.94999694824219,
-        102.5
+        102.5,
+        96.44999694824219
       ],
       "history": [
-        {
-          "date": "2025-10-31",
-          "close": 63.46263885498047
-        },
         {
           "date": "2025-11-03",
           "close": 62.87456512451172
@@ -3397,10 +3295,14 @@
         {
           "date": "2026-11-13",
           "close": 102.5
+        },
+        {
+          "date": "2026-11-16",
+          "close": 96.44999694824219
         }
       ],
-      "buyScore": 7.4,
-      "sellScore": 2.9,
+      "buyScore": 6.7,
+      "sellScore": 4.1,
       "confirmed": false,
       "leveraged": false,
       "status": "fresh",
@@ -3414,49 +3316,49 @@
           "name": "長期均線",
           "buyScore": 8,
           "sellScore": 2,
-          "value": "SMA50 107.90 · SMA200 95.40"
+          "value": "SMA50 107.66 · SMA200 95.54"
         },
         {
           "name": "高點回落",
           "buyScore": 8,
           "sellScore": null,
-          "value": "距252日高點 −12.02%"
+          "value": "距252日高點 −17.21%"
         },
         {
           "name": "RSI (14)",
-          "buyScore": 6,
+          "buyScore": 5,
           "sellScore": 5,
-          "value": "RSI 46.49"
+          "value": "RSI 37.63"
         },
         {
           "name": "KD (9, 1/3)",
           "buyScore": 6,
           "sellScore": 5,
-          "value": "K 71.15 · D 53.16"
+          "value": "K 65.04 · D 57.12"
         },
         {
           "name": "布林通道 (20, 2)",
           "buyScore": 5,
           "sellScore": 5,
-          "value": "下軌 94.59 · 上軌 112.59"
+          "value": "下軌 93.81 · 上軌 112.11"
         },
         {
           "name": "MACD (12, 26, 9)",
-          "buyScore": 8,
-          "sellScore": 2,
-          "value": "Histogram 0.013"
+          "buyScore": 2,
+          "sellScore": 8,
+          "value": "Histogram -0.172"
         },
         {
           "name": "ADX / DMI (14)",
           "buyScore": null,
           "sellScore": null,
-          "value": "ADX 33.12 · +DI 23.98 · −DI 36.49"
+          "value": "ADX 33.30 · +DI 20.83 · −DI 43.96"
         },
         {
           "name": "ATR 波動率 (14)",
           "buyScore": null,
           "sellScore": null,
-          "value": "ATR / 收盤 3.01%"
+          "value": "ATR / 收盤 3.41%"
         }
       ],
       "cross": null,
@@ -3464,11 +3366,11 @@
       "licenseNote": "Yahoo資料使用條款適用；接入或使用者選擇不代表取得再散布授權。",
       "dataSourceUrl": "https://finance.yahoo.com/",
       "adjustment": "來源調整後OHLC（分割／配息）",
-      "expectedSession": "2026-11-13",
-      "lastSuccessfulFetchAt": "2026-11-13T23:46:37.108528+08:00",
-      "lastAttemptedAt": "2026-11-13T23:46:37.108528+08:00",
+      "expectedSession": "2026-11-16",
+      "lastSuccessfulFetchAt": "2026-11-17T01:40:03.223540+08:00",
+      "lastAttemptedAt": "2026-11-17T01:40:03.223540+08:00",
       "sourceError": null,
-      "nextUpdateAt": "2026-11-16T16:00:00+08:00"
+      "nextUpdateAt": "2026-11-17T16:00:00+08:00"
     },
     {
       "id": "00631L",
@@ -3478,11 +3380,10 @@
       "region": "tw",
       "kind": "leveraged",
       "sourceUrl": "https://www.yuantaetfs.com/product/detail/00631L/Basic_information",
-      "sessionDate": "2026-11-13",
-      "close": 31.920000076293945,
-      "changePct": 3.0,
+      "sessionDate": "2026-11-16",
+      "close": 27.950000762939453,
+      "changePct": -12.44,
       "sparkline": [
-        34.810001373291016,
         33.959999084472656,
         34.27000045776367,
         34.84000015258789,
@@ -3541,13 +3442,10 @@
         30.25,
         32.529998779296875,
         30.989999771118164,
-        31.920000076293945
+        31.920000076293945,
+        27.950000762939453
       ],
       "history": [
-        {
-          "date": "2025-10-31",
-          "close": 16.14090919494629
-        },
         {
           "date": "2025-11-03",
           "close": 15.915909767150879
@@ -4551,10 +4449,14 @@
         {
           "date": "2026-11-13",
           "close": 31.920000076293945
+        },
+        {
+          "date": "2026-11-16",
+          "close": 27.950000762939453
         }
       ],
-      "buyScore": 7.0,
-      "sellScore": 3.7,
+      "buyScore": 5.5,
+      "sellScore": 5.6,
       "confirmed": false,
       "leveraged": true,
       "status": "fresh",
@@ -4566,51 +4468,51 @@
       "details": [
         {
           "name": "長期均線",
-          "buyScore": 8,
-          "sellScore": 2,
-          "value": "SMA50 36.24 · SMA200 31.05"
+          "buyScore": 5,
+          "sellScore": 5,
+          "value": "SMA50 36.05 · SMA200 31.10"
         },
         {
           "name": "高點回落",
           "buyScore": 8,
           "sellScore": null,
-          "value": "距252日高點 −23.80%"
+          "value": "距252日高點 −33.28%"
         },
         {
           "name": "RSI (14)",
-          "buyScore": 6,
+          "buyScore": 5,
           "sellScore": 5,
-          "value": "RSI 44.39"
+          "value": "RSI 35.69"
         },
         {
           "name": "KD (9, 1/3)",
           "buyScore": 6,
           "sellScore": 5,
-          "value": "K 65.61 · D 47.50"
+          "value": "K 58.46 · D 51.15"
         },
         {
           "name": "布林通道 (20, 2)",
           "buyScore": 5,
           "sellScore": 5,
-          "value": "下軌 27.13 · 上軌 39.48"
+          "value": "下軌 26.52 · 上軌 39.18"
         },
         {
           "name": "MACD (12, 26, 9)",
-          "buyScore": 4,
-          "sellScore": 6,
-          "value": "Histogram -0.076"
+          "buyScore": 2,
+          "sellScore": 8,
+          "value": "Histogram -0.196"
         },
         {
           "name": "ADX / DMI (14)",
           "buyScore": null,
           "sellScore": null,
-          "value": "ADX 30.68 · +DI 23.41 · −DI 36.63"
+          "value": "ADX 31.21 · +DI 20.12 · −DI 44.89"
         },
         {
           "name": "ATR 波動率 (14)",
           "buyScore": null,
           "sellScore": null,
-          "value": "ATR / 收盤 5.86%"
+          "value": "ATR / 收盤 7.23%"
         }
       ],
       "cross": null,
@@ -4618,11 +4520,11 @@
       "licenseNote": "Yahoo資料使用條款適用；接入或使用者選擇不代表取得再散布授權。",
       "dataSourceUrl": "https://finance.yahoo.com/",
       "adjustment": "來源調整後OHLC（分割／配息）",
-      "expectedSession": "2026-11-13",
-      "lastSuccessfulFetchAt": "2026-11-13T23:46:37.108528+08:00",
-      "lastAttemptedAt": "2026-11-13T23:46:37.108528+08:00",
+      "expectedSession": "2026-11-16",
+      "lastSuccessfulFetchAt": "2026-11-17T01:40:03.223540+08:00",
+      "lastAttemptedAt": "2026-11-17T01:40:03.223540+08:00",
       "sourceError": null,
-      "nextUpdateAt": "2026-11-16T16:00:00+08:00"
+      "nextUpdateAt": "2026-11-17T16:00:00+08:00"
     },
     {
       "id": "00685L",
@@ -4632,11 +4534,10 @@
       "region": "tw",
       "kind": "leveraged",
       "sourceUrl": "https://www.capitalfund.com.tw/etf/product/detail/094",
-      "sessionDate": "2026-11-13",
-      "close": 10.399999618530273,
-      "changePct": 3.48,
+      "sessionDate": "2026-11-16",
+      "close": 9.100000381469727,
+      "changePct": -12.5,
       "sparkline": [
-        11.4399995803833,
         11.15999984741211,
         11.25,
         11.369999885559082,
@@ -4695,13 +4596,10 @@
         9.850000381469727,
         10.539999961853027,
         10.050000190734863,
-        10.399999618530273
+        10.399999618530273,
+        9.100000381469727
       ],
       "history": [
-        {
-          "date": "2025-10-31",
-          "close": 5.270830154418945
-        },
         {
           "date": "2025-11-03",
           "close": 5.204170227050781
@@ -5705,10 +5603,14 @@
         {
           "date": "2026-11-13",
           "close": 10.399999618530273
+        },
+        {
+          "date": "2026-11-16",
+          "close": 9.100000381469727
         }
       ],
-      "buyScore": 7.0,
-      "sellScore": 3.7,
+      "buyScore": 5.5,
+      "sellScore": 5.6,
       "confirmed": false,
       "leveraged": true,
       "status": "fresh",
@@ -5720,51 +5622,51 @@
       "details": [
         {
           "name": "長期均線",
-          "buyScore": 8,
-          "sellScore": 2,
-          "value": "SMA50 11.95 · SMA200 10.21"
+          "buyScore": 5,
+          "sellScore": 5,
+          "value": "SMA50 11.89 · SMA200 10.22"
         },
         {
           "name": "高點回落",
           "buyScore": 8,
           "sellScore": null,
-          "value": "距252日高點 −25.02%"
+          "value": "距252日高點 −34.39%"
         },
         {
           "name": "RSI (14)",
-          "buyScore": 6,
+          "buyScore": 5,
           "sellScore": 5,
-          "value": "RSI 43.84"
+          "value": "RSI 35.49"
         },
         {
           "name": "KD (9, 1/3)",
           "buyScore": 6,
           "sellScore": 5,
-          "value": "K 62.13 · D 44.87"
+          "value": "K 55.68 · D 48.47"
         },
         {
           "name": "布林通道 (20, 2)",
           "buyScore": 5,
           "sellScore": 5,
-          "value": "下軌 8.77 · 上軌 13.12"
+          "value": "下軌 8.56 · 上軌 13.01"
         },
         {
           "name": "MACD (12, 26, 9)",
-          "buyScore": 4,
-          "sellScore": 6,
-          "value": "Histogram -0.040"
+          "buyScore": 2,
+          "sellScore": 8,
+          "value": "Histogram -0.075"
         },
         {
           "name": "ADX / DMI (14)",
           "buyScore": null,
           "sellScore": null,
-          "value": "ADX 31.13 · +DI 23.01 · −DI 36.12"
+          "value": "ADX 31.60 · +DI 19.90 · −DI 44.03"
         },
         {
           "name": "ATR 波動率 (14)",
           "buyScore": null,
           "sellScore": null,
-          "value": "ATR / 收盤 6.15%"
+          "value": "ATR / 收盤 7.55%"
         }
       ],
       "cross": null,
@@ -5772,11 +5674,11 @@
       "licenseNote": "Yahoo資料使用條款適用；接入或使用者選擇不代表取得再散布授權。",
       "dataSourceUrl": "https://finance.yahoo.com/",
       "adjustment": "來源調整後OHLC（分割／配息）",
-      "expectedSession": "2026-11-13",
-      "lastSuccessfulFetchAt": "2026-11-13T23:46:37.108528+08:00",
-      "lastAttemptedAt": "2026-11-13T23:46:37.108528+08:00",
+      "expectedSession": "2026-11-16",
+      "lastSuccessfulFetchAt": "2026-11-17T01:40:03.223540+08:00",
+      "lastAttemptedAt": "2026-11-17T01:40:03.223540+08:00",
       "sourceError": null,
-      "nextUpdateAt": "2026-11-16T16:00:00+08:00"
+      "nextUpdateAt": "2026-11-17T16:00:00+08:00"
     },
     {
       "id": "sp500",
@@ -8094,11 +7996,10 @@
       "region": "asia",
       "kind": "index",
       "sourceUrl": "https://global.krx.co.kr/",
-      "sessionDate": "2026-11-12",
-      "close": 5342.72998046875,
-      "changePct": -0.61,
+      "sessionDate": "2026-11-13",
+      "close": 5290.52978515625,
+      "changePct": -0.98,
       "sparkline": [
-        6977.93994140625,
         6869.830078125,
         6471.169921875,
         6852.580078125,
@@ -8157,13 +8058,10 @@
         5018.85009765625,
         5239.1298828125,
         5375.35986328125,
-        5342.72998046875
+        5342.72998046875,
+        5290.52978515625
       ],
       "history": [
-        {
-          "date": "2025-11-03",
-          "close": 4221.8701171875
-        },
         {
           "date": "2025-11-04",
           "close": 4121.740234375
@@ -9167,6 +9065,10 @@
         {
           "date": "2026-11-12",
           "close": 5342.72998046875
+        },
+        {
+          "date": "2026-11-13",
+          "close": 5290.52978515625
         }
       ],
       "buyScore": null,
@@ -9185,11 +9087,11 @@
       "licenseNote": "Yahoo資料使用條款適用；接入或使用者選擇不代表取得再散布授權。",
       "dataSourceUrl": "https://finance.yahoo.com/",
       "adjustment": "來源調整後OHLC（分割／配息）",
-      "expectedSession": "2026-11-13",
-      "lastSuccessfulFetchAt": "2026-11-13T23:46:37.108528+08:00",
-      "lastAttemptedAt": "2026-11-13T23:46:37.108528+08:00",
+      "expectedSession": "2026-11-16",
+      "lastSuccessfulFetchAt": "2026-11-17T01:40:03.223540+08:00",
+      "lastAttemptedAt": "2026-11-17T01:40:03.223540+08:00",
       "sourceError": null,
-      "nextUpdateAt": "2026-11-16T16:00:00+08:00"
+      "nextUpdateAt": "2026-11-17T16:00:00+08:00"
     },
     {
       "id": "nikkei",
@@ -9199,11 +9101,10 @@
       "region": "asia",
       "kind": "index",
       "sourceUrl": "https://indexes.nikkei.co.jp/en/nkave",
-      "sessionDate": "2026-11-12",
-      "close": 60819.359375,
-      "changePct": -0.7,
+      "sessionDate": "2026-11-13",
+      "close": 61142.3515625,
+      "changePct": 0.53,
       "sparkline": [
-        68713.796875,
         69220.25,
         67460.7265625,
         65326.421875,
@@ -9262,13 +9163,10 @@
         58775.5,
         60459.578125,
         61248.58984375,
-        60819.359375
+        60819.359375,
+        61142.3515625
       ],
       "history": [
-        {
-          "date": "2025-10-29",
-          "close": 51307.6484375
-        },
         {
           "date": "2025-10-30",
           "close": 51325.609375
@@ -10272,6 +10170,10 @@
         {
           "date": "2026-11-12",
           "close": 60819.359375
+        },
+        {
+          "date": "2026-11-13",
+          "close": 61142.3515625
         }
       ],
       "buyScore": null,
@@ -10290,11 +10192,11 @@
       "licenseNote": "Yahoo資料使用條款適用；接入或使用者選擇不代表取得再散布授權。",
       "dataSourceUrl": "https://finance.yahoo.com/",
       "adjustment": "來源調整後OHLC（分割／配息）",
-      "expectedSession": "2026-11-13",
-      "lastSuccessfulFetchAt": "2026-11-13T23:46:37.108528+08:00",
-      "lastAttemptedAt": "2026-11-13T23:46:37.108528+08:00",
+      "expectedSession": "2026-11-16",
+      "lastSuccessfulFetchAt": "2026-11-17T01:40:03.223540+08:00",
+      "lastAttemptedAt": "2026-11-17T01:40:03.223540+08:00",
       "sourceError": null,
-      "nextUpdateAt": "2026-11-16T16:00:00+08:00"
+      "nextUpdateAt": "2026-11-17T16:00:00+08:00"
     }
   ],
   "sentiment": [
