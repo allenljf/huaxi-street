@@ -42522,22 +42522,8 @@
     "provider": "yahoo"
   },
   "sp500": {
-    "lastAttemptedAt": "2026-11-14T12:06:52.730302+08:00",
+    "lastAttemptedAt": "2026-11-17T13:45:50.888245+08:00",
     "bars": [
-      {
-        "date": "2021-11-15",
-        "open": 4689.2998046875,
-        "high": 4697.419921875,
-        "low": 4672.85986328125,
-        "close": 4682.7998046875
-      },
-      {
-        "date": "2021-11-16",
-        "open": 4679.419921875,
-        "high": 4714.9501953125,
-        "low": 4679.419921875,
-        "close": 4700.89990234375
-      },
       {
         "date": "2021-11-17",
         "open": 4701.5,
@@ -51308,40 +51294,33 @@
         "high": 7621.77978515625,
         "low": 7499.39990234375,
         "close": 7561.669921875
+      },
+      {
+        "date": "2026-11-16",
+        "open": 7513.97998046875,
+        "high": 7515.60009765625,
+        "low": 7400.14990234375,
+        "close": 7416.58984375
       }
     ],
     "priceBasis": "vendor-adjusted",
     "quoteSnapshot": {
-      "date": "2026-11-13",
-      "close": 7561.669921875,
-      "changePct": -0.40474660007389085
+      "date": "2026-11-16",
+      "close": 7416.58984375,
+      "changePct": -1.9186248490601354
     },
-    "eventsReviewedThrough": "2026-11-13",
+    "eventsReviewedThrough": "2026-11-16",
     "events": [],
     "sourceName": "Yahoo Finance · 免費研究來源",
     "sourceUrl": "https://finance.yahoo.com/",
     "licenseNote": "Yahoo資料使用條款適用；接入或使用者選擇不代表取得再散布授權。",
-    "lastSuccessfulFetchAt": "2026-11-14T12:06:52.730302+08:00",
+    "lastSuccessfulFetchAt": "2026-11-17T13:45:50.888245+08:00",
     "lastError": null,
     "provider": "yahoo"
   },
   "nasdaq": {
-    "lastAttemptedAt": "2026-11-14T12:06:52.730302+08:00",
+    "lastAttemptedAt": "2026-11-17T13:45:50.888245+08:00",
     "bars": [
-      {
-        "date": "2021-11-15",
-        "open": 15894.8203125,
-        "high": 15918.4501953125,
-        "low": 15778.3095703125,
-        "close": 15853.849609375
-      },
-      {
-        "date": "2021-11-16",
-        "open": 15840.3203125,
-        "high": 15989.6103515625,
-        "low": 15825.0,
-        "close": 15973.8603515625
-      },
       {
         "date": "2021-11-17",
         "open": 15973.6201171875,
@@ -60108,24 +60087,31 @@
       },
       {
         "date": "2026-11-13",
-        "open": 25408.001953125,
+        "open": 25408.0,
         "high": 25423.08984375,
-        "low": 24872.408203125,
-        "close": 25136.2734375
+        "low": 24872.41015625,
+        "close": 25136.26953125
+      },
+      {
+        "date": "2026-11-16",
+        "open": 24853.349609375,
+        "high": 24882.0390625,
+        "low": 24460.279296875,
+        "close": 24509.759765625
       }
     ],
     "priceBasis": "vendor-adjusted",
     "quoteSnapshot": {
-      "date": "2026-11-13",
-      "close": 25136.2734375,
-      "changePct": -0.9059985502914425
+      "date": "2026-11-16",
+      "close": 24509.759765625,
+      "changePct": -2.492453245085191
     },
-    "eventsReviewedThrough": "2026-11-13",
+    "eventsReviewedThrough": "2026-11-16",
     "events": [],
     "sourceName": "Yahoo Finance · 免費研究來源",
     "sourceUrl": "https://finance.yahoo.com/",
     "licenseNote": "Yahoo資料使用條款適用；接入或使用者選擇不代表取得再散布授權。",
-    "lastSuccessfulFetchAt": "2026-11-14T12:06:52.730302+08:00",
+    "lastSuccessfulFetchAt": "2026-11-17T13:45:50.888245+08:00",
     "lastError": null,
     "provider": "yahoo"
   },

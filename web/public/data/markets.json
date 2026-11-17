@@ -1,10 +1,10 @@
 {
   "version": 1,
   "rulesVersion": "research-v1",
-  "generatedAt": "2026-11-17T01:40:03.223540+08:00",
-  "expectedTaiwanSession": "2026-11-16",
+  "generatedAt": "2026-11-17T13:45:50.888245+08:00",
+  "expectedTaiwanSession": "2026-11-17",
   "scheduleText": "亞洲 週一至五 16:00 · 美國 週二至六 08:00（台北時間）",
-  "lastBatch": "asia",
+  "lastBatch": "us",
   "researchSources": true,
   "privateResearch": false,
   "markets": [
@@ -1107,7 +1107,7 @@
       "licenseNote": "Yahoo資料使用條款適用；接入或使用者選擇不代表取得再散布授權。",
       "dataSourceUrl": "https://finance.yahoo.com/",
       "adjustment": "來源調整後OHLC（分割／配息）",
-      "expectedSession": "2026-11-16",
+      "expectedSession": "2026-11-17",
       "lastSuccessfulFetchAt": "2026-11-17T01:40:03.223540+08:00",
       "lastAttemptedAt": "2026-11-17T01:40:03.223540+08:00",
       "sourceError": null,
@@ -2212,7 +2212,7 @@
       "licenseNote": "Yahoo資料使用條款適用；接入或使用者選擇不代表取得再散布授權。",
       "dataSourceUrl": "https://finance.yahoo.com/",
       "adjustment": "來源調整後OHLC（分割／配息）",
-      "expectedSession": "2026-11-16",
+      "expectedSession": "2026-11-17",
       "lastSuccessfulFetchAt": "2026-11-17T01:40:03.223540+08:00",
       "lastAttemptedAt": "2026-11-17T01:40:03.223540+08:00",
       "sourceError": null,
@@ -3301,72 +3301,23 @@
           "close": 96.44999694824219
         }
       ],
-      "buyScore": 6.7,
-      "sellScore": 4.1,
+      "buyScore": null,
+      "sellScore": null,
       "confirmed": false,
       "leveraged": false,
-      "status": "fresh",
+      "status": "stale",
       "dataCount": 1213,
-      "scoreStatus": "ready",
+      "scoreStatus": "warming",
       "reasons": [
-        "長期趨勢與進場節奏綜合觀察"
+        "行情尚未更新至最近完整交易日"
       ],
-      "details": [
-        {
-          "name": "長期均線",
-          "buyScore": 8,
-          "sellScore": 2,
-          "value": "SMA50 107.66 · SMA200 95.54"
-        },
-        {
-          "name": "高點回落",
-          "buyScore": 8,
-          "sellScore": null,
-          "value": "距252日高點 −17.21%"
-        },
-        {
-          "name": "RSI (14)",
-          "buyScore": 5,
-          "sellScore": 5,
-          "value": "RSI 37.63"
-        },
-        {
-          "name": "KD (9, 1/3)",
-          "buyScore": 6,
-          "sellScore": 5,
-          "value": "K 65.04 · D 57.12"
-        },
-        {
-          "name": "布林通道 (20, 2)",
-          "buyScore": 5,
-          "sellScore": 5,
-          "value": "下軌 93.81 · 上軌 112.11"
-        },
-        {
-          "name": "MACD (12, 26, 9)",
-          "buyScore": 2,
-          "sellScore": 8,
-          "value": "Histogram -0.172"
-        },
-        {
-          "name": "ADX / DMI (14)",
-          "buyScore": null,
-          "sellScore": null,
-          "value": "ADX 33.30 · +DI 20.83 · −DI 43.96"
-        },
-        {
-          "name": "ATR 波動率 (14)",
-          "buyScore": null,
-          "sellScore": null,
-          "value": "ATR / 收盤 3.41%"
-        }
-      ],
+      "details": [],
       "cross": null,
       "sourceName": "Yahoo Finance · 免費研究來源",
       "licenseNote": "Yahoo資料使用條款適用；接入或使用者選擇不代表取得再散布授權。",
       "dataSourceUrl": "https://finance.yahoo.com/",
       "adjustment": "來源調整後OHLC（分割／配息）",
-      "expectedSession": "2026-11-16",
+      "expectedSession": "2026-11-17",
       "lastSuccessfulFetchAt": "2026-11-17T01:40:03.223540+08:00",
       "lastAttemptedAt": "2026-11-17T01:40:03.223540+08:00",
       "sourceError": null,
@@ -4455,72 +4406,23 @@
           "close": 27.950000762939453
         }
       ],
-      "buyScore": 5.5,
-      "sellScore": 5.6,
+      "buyScore": null,
+      "sellScore": null,
       "confirmed": false,
       "leveraged": true,
-      "status": "fresh",
+      "status": "stale",
       "dataCount": 1213,
-      "scoreStatus": "ready",
+      "scoreStatus": "warming",
       "reasons": [
-        "長期趨勢與進場節奏綜合觀察"
+        "行情尚未更新至最近完整交易日"
       ],
-      "details": [
-        {
-          "name": "長期均線",
-          "buyScore": 5,
-          "sellScore": 5,
-          "value": "SMA50 36.05 · SMA200 31.10"
-        },
-        {
-          "name": "高點回落",
-          "buyScore": 8,
-          "sellScore": null,
-          "value": "距252日高點 −33.28%"
-        },
-        {
-          "name": "RSI (14)",
-          "buyScore": 5,
-          "sellScore": 5,
-          "value": "RSI 35.69"
-        },
-        {
-          "name": "KD (9, 1/3)",
-          "buyScore": 6,
-          "sellScore": 5,
-          "value": "K 58.46 · D 51.15"
-        },
-        {
-          "name": "布林通道 (20, 2)",
-          "buyScore": 5,
-          "sellScore": 5,
-          "value": "下軌 26.52 · 上軌 39.18"
-        },
-        {
-          "name": "MACD (12, 26, 9)",
-          "buyScore": 2,
-          "sellScore": 8,
-          "value": "Histogram -0.196"
-        },
-        {
-          "name": "ADX / DMI (14)",
-          "buyScore": null,
-          "sellScore": null,
-          "value": "ADX 31.21 · +DI 20.12 · −DI 44.89"
-        },
-        {
-          "name": "ATR 波動率 (14)",
-          "buyScore": null,
-          "sellScore": null,
-          "value": "ATR / 收盤 7.23%"
-        }
-      ],
+      "details": [],
       "cross": null,
       "sourceName": "Yahoo Finance · 免費研究來源",
       "licenseNote": "Yahoo資料使用條款適用；接入或使用者選擇不代表取得再散布授權。",
       "dataSourceUrl": "https://finance.yahoo.com/",
       "adjustment": "來源調整後OHLC（分割／配息）",
-      "expectedSession": "2026-11-16",
+      "expectedSession": "2026-11-17",
       "lastSuccessfulFetchAt": "2026-11-17T01:40:03.223540+08:00",
       "lastAttemptedAt": "2026-11-17T01:40:03.223540+08:00",
       "sourceError": null,
@@ -5609,72 +5511,23 @@
           "close": 9.100000381469727
         }
       ],
-      "buyScore": 5.5,
-      "sellScore": 5.6,
+      "buyScore": null,
+      "sellScore": null,
       "confirmed": false,
       "leveraged": true,
-      "status": "fresh",
+      "status": "stale",
       "dataCount": 1213,
-      "scoreStatus": "ready",
+      "scoreStatus": "warming",
       "reasons": [
-        "長期趨勢與進場節奏綜合觀察"
+        "行情尚未更新至最近完整交易日"
       ],
-      "details": [
-        {
-          "name": "長期均線",
-          "buyScore": 5,
-          "sellScore": 5,
-          "value": "SMA50 11.89 · SMA200 10.22"
-        },
-        {
-          "name": "高點回落",
-          "buyScore": 8,
-          "sellScore": null,
-          "value": "距252日高點 −34.39%"
-        },
-        {
-          "name": "RSI (14)",
-          "buyScore": 5,
-          "sellScore": 5,
-          "value": "RSI 35.49"
-        },
-        {
-          "name": "KD (9, 1/3)",
-          "buyScore": 6,
-          "sellScore": 5,
-          "value": "K 55.68 · D 48.47"
-        },
-        {
-          "name": "布林通道 (20, 2)",
-          "buyScore": 5,
-          "sellScore": 5,
-          "value": "下軌 8.56 · 上軌 13.01"
-        },
-        {
-          "name": "MACD (12, 26, 9)",
-          "buyScore": 2,
-          "sellScore": 8,
-          "value": "Histogram -0.075"
-        },
-        {
-          "name": "ADX / DMI (14)",
-          "buyScore": null,
-          "sellScore": null,
-          "value": "ADX 31.60 · +DI 19.90 · −DI 44.03"
-        },
-        {
-          "name": "ATR 波動率 (14)",
-          "buyScore": null,
-          "sellScore": null,
-          "value": "ATR / 收盤 7.55%"
-        }
-      ],
+      "details": [],
       "cross": null,
       "sourceName": "Yahoo Finance · 免費研究來源",
       "licenseNote": "Yahoo資料使用條款適用；接入或使用者選擇不代表取得再散布授權。",
       "dataSourceUrl": "https://finance.yahoo.com/",
       "adjustment": "來源調整後OHLC（分割／配息）",
-      "expectedSession": "2026-11-16",
+      "expectedSession": "2026-11-17",
       "lastSuccessfulFetchAt": "2026-11-17T01:40:03.223540+08:00",
       "lastAttemptedAt": "2026-11-17T01:40:03.223540+08:00",
       "sourceError": null,
@@ -5688,11 +5541,10 @@
       "region": "us",
       "kind": "index",
       "sourceUrl": "https://www.spglobal.com/spdji/en/indices/equity/sp-500/",
-      "sessionDate": "2026-11-13",
-      "close": 7561.669921875,
-      "changePct": -0.4,
+      "sessionDate": "2026-11-16",
+      "close": 7416.58984375,
+      "changePct": -1.92,
       "sparkline": [
-        7674.3701171875,
         7652.85986328125,
         7677.27978515625,
         7675.7001953125,
@@ -5751,13 +5603,10 @@
         7520.93017578125,
         7619.3798828125,
         7592.39990234375,
-        7561.669921875
+        7561.669921875,
+        7416.58984375
       ],
       "history": [
-        {
-          "date": "2025-11-13",
-          "close": 6737.490234375
-        },
         {
           "date": "2025-11-14",
           "close": 6734.10986328125
@@ -6761,14 +6610,18 @@
         {
           "date": "2026-11-13",
           "close": 7561.669921875
+        },
+        {
+          "date": "2026-11-16",
+          "close": 7416.58984375
         }
       ],
-      "buyScore": 5.9,
-      "sellScore": 3.7,
+      "buyScore": 6.2,
+      "sellScore": 4.2,
       "confirmed": false,
       "leveraged": false,
       "status": "fresh",
-      "dataCount": 1255,
+      "dataCount": 1254,
       "scoreStatus": "ready",
       "reasons": [
         "長期趨勢與進場節奏綜合觀察"
@@ -6778,49 +6631,49 @@
           "name": "長期均線",
           "buyScore": 8,
           "sellScore": 2,
-          "value": "SMA50 7667.46 · SMA200 7340.32"
+          "value": "SMA50 7661.42 · SMA200 7342.71"
         },
         {
           "name": "高點回落",
-          "buyScore": 4,
+          "buyScore": 6,
           "sellScore": null,
-          "value": "距252日高點 −3.29%"
+          "value": "距252日高點 −5.15%"
         },
         {
           "name": "RSI (14)",
           "buyScore": 5,
           "sellScore": 5,
-          "value": "RSI 46.81"
+          "value": "RSI 40.18"
         },
         {
           "name": "KD (9, 1/3)",
-          "buyScore": 6,
-          "sellScore": 5,
-          "value": "K 55.34 · D 47.13"
+          "buyScore": 5,
+          "sellScore": 6,
+          "value": "K 42.94 · D 45.73"
         },
         {
           "name": "布林通道 (20, 2)",
           "buyScore": 5,
           "sellScore": 5,
-          "value": "下軌 7395.74 · 上軌 7830.78"
+          "value": "下軌 7369.12 · 上軌 7829.99"
         },
         {
           "name": "MACD (12, 26, 9)",
-          "buyScore": 4,
-          "sellScore": 6,
-          "value": "Histogram -0.826"
+          "buyScore": 2,
+          "sellScore": 8,
+          "value": "Histogram -8.175"
         },
         {
           "name": "ADX / DMI (14)",
           "buyScore": null,
           "sellScore": null,
-          "value": "ADX 15.64 · +DI 24.14 · −DI 29.46"
+          "value": "ADX 15.98 · +DI 21.65 · −DI 32.76"
         },
         {
           "name": "ATR 波動率 (14)",
           "buyScore": null,
           "sellScore": null,
-          "value": "ATR / 收盤 1.43%"
+          "value": "ATR / 收盤 1.51%"
         }
       ],
       "cross": null,
@@ -6828,11 +6681,11 @@
       "licenseNote": "Yahoo資料使用條款適用；接入或使用者選擇不代表取得再散布授權。",
       "dataSourceUrl": "https://finance.yahoo.com/",
       "adjustment": "來源調整後OHLC（分割／配息）",
-      "expectedSession": "2026-11-13",
-      "lastSuccessfulFetchAt": "2026-11-14T12:06:52.730302+08:00",
-      "lastAttemptedAt": "2026-11-14T12:06:52.730302+08:00",
+      "expectedSession": "2026-11-16",
+      "lastSuccessfulFetchAt": "2026-11-17T13:45:50.888245+08:00",
+      "lastAttemptedAt": "2026-11-17T13:45:50.888245+08:00",
       "sourceError": null,
-      "nextUpdateAt": "2026-11-17T08:00:00+08:00"
+      "nextUpdateAt": "2026-11-18T08:00:00+08:00"
     },
     {
       "id": "nasdaq",
@@ -6842,11 +6695,10 @@
       "region": "us",
       "kind": "index",
       "sourceUrl": "https://www.nasdaq.com/market-activity/index/comp",
-      "sessionDate": "2026-11-13",
-      "close": 25136.2734375,
-      "changePct": -0.91,
+      "sessionDate": "2026-11-16",
+      "close": 24509.759765625,
+      "changePct": -2.49,
       "sparkline": [
-        26180.4609375,
         25980.189453125,
         26151.30078125,
         26130.19921875,
@@ -6905,13 +6757,10 @@
         25065.869140625,
         25466.189453125,
         25366.08984375,
-        25136.2734375
+        25136.26953125,
+        24509.759765625
       ],
       "history": [
-        {
-          "date": "2025-11-13",
-          "close": 22870.359375
-        },
         {
           "date": "2025-11-14",
           "close": 22900.58984375
@@ -7914,15 +7763,19 @@
         },
         {
           "date": "2026-11-13",
-          "close": 25136.2734375
+          "close": 25136.26953125
+        },
+        {
+          "date": "2026-11-16",
+          "close": 24509.759765625
         }
       ],
-      "buyScore": 5.2,
-      "sellScore": 5.2,
+      "buyScore": 5.5,
+      "sellScore": 5.7,
       "confirmed": false,
       "leveraged": false,
       "status": "fresh",
-      "dataCount": 1255,
+      "dataCount": 1254,
       "scoreStatus": "ready",
       "reasons": [
         "長期趨勢與進場節奏綜合觀察"
@@ -7932,49 +7785,49 @@
           "name": "長期均線",
           "buyScore": 5,
           "sellScore": 5,
-          "value": "SMA50 26350.07 · SMA200 25137.41"
+          "value": "SMA50 26310.13 · SMA200 25142.65"
         },
         {
           "name": "高點回落",
-          "buyScore": 6,
+          "buyScore": 8,
           "sellScore": null,
-          "value": "距252日高點 −8.93%"
+          "value": "距252日高點 −11.20%"
         },
         {
           "name": "RSI (14)",
           "buyScore": 5,
           "sellScore": 5,
-          "value": "RSI 42.41"
+          "value": "RSI 37.06"
         },
         {
           "name": "KD (9, 1/3)",
-          "buyScore": 6,
-          "sellScore": 5,
-          "value": "K 49.03 · D 41.27"
+          "buyScore": 5,
+          "sellScore": 6,
+          "value": "K 37.31 · D 39.95"
         },
         {
           "name": "布林通道 (20, 2)",
           "buyScore": 5,
           "sellScore": 5,
-          "value": "下軌 24368.38 · 上軌 27011.26"
+          "value": "下軌 24223.37 · 上軌 26964.15"
         },
         {
           "name": "MACD (12, 26, 9)",
-          "buyScore": 4,
-          "sellScore": 6,
-          "value": "Histogram -15.201"
+          "buyScore": 2,
+          "sellScore": 8,
+          "value": "Histogram -43.995"
         },
         {
           "name": "ADX / DMI (14)",
           "buyScore": null,
           "sellScore": null,
-          "value": "ADX 27.18 · +DI 20.65 · −DI 34.01"
+          "value": "ADX 27.51 · +DI 18.82 · −DI 36.39"
         },
         {
           "name": "ATR 波動率 (14)",
           "buyScore": null,
           "sellScore": null,
-          "value": "ATR / 收盤 2.14%"
+          "value": "ATR / 收盤 2.23%"
         }
       ],
       "cross": null,
@@ -7982,11 +7835,11 @@
       "licenseNote": "Yahoo資料使用條款適用；接入或使用者選擇不代表取得再散布授權。",
       "dataSourceUrl": "https://finance.yahoo.com/",
       "adjustment": "來源調整後OHLC（分割／配息）",
-      "expectedSession": "2026-11-13",
-      "lastSuccessfulFetchAt": "2026-11-14T12:06:52.730302+08:00",
-      "lastAttemptedAt": "2026-11-14T12:06:52.730302+08:00",
+      "expectedSession": "2026-11-16",
+      "lastSuccessfulFetchAt": "2026-11-17T13:45:50.888245+08:00",
+      "lastAttemptedAt": "2026-11-17T13:45:50.888245+08:00",
       "sourceError": null,
-      "nextUpdateAt": "2026-11-17T08:00:00+08:00"
+      "nextUpdateAt": "2026-11-18T08:00:00+08:00"
     },
     {
       "id": "kospi",
@@ -10204,12 +10057,12 @@
       "id": "vix",
       "name": "VIX 波動率",
       "label": "市場的心跳",
-      "value": 19.3,
+      "value": 22.91,
       "status": "已收盤",
       "url": "https://www.cboe.com/tradable_products/vix/",
-      "sessionDate": "2026-11-13",
-      "lastSuccessfulFetchAt": "2026-11-14T12:06:52.730302+08:00",
-      "lastAttemptedAt": "2026-11-14T12:06:52.730302+08:00"
+      "sessionDate": "2026-11-16",
+      "lastSuccessfulFetchAt": "2026-11-17T13:45:50.888245+08:00",
+      "lastAttemptedAt": "2026-11-17T13:45:50.888245+08:00"
     },
     {
       "id": "fear",
@@ -10218,7 +10071,7 @@
       "value": null,
       "status": "資料來源暫時無法取得",
       "url": "https://www.cnn.com/markets/fear-and-greed",
-      "lastAttemptedAt": "2026-11-14T12:06:52.730302+08:00"
+      "lastAttemptedAt": "2026-11-17T13:45:50.888245+08:00"
     }
   ],
   "research": {
