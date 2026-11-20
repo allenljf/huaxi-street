@@ -3,15 +3,15 @@
     "id": "vix",
     "name": "VIX 波動率",
     "label": "市場的心跳",
-    "value": 24.56,
-    "sessionDate": "2026-11-18",
+    "value": 28.44,
+    "sessionDate": "2026-11-19",
     "status": "已收盤",
     "url": "https://www.cboe.com/tradable_products/vix/",
-    "lastSuccessfulFetchAt": "2026-11-19T13:06:02.657656+08:00",
-    "lastAttemptedAt": "2026-11-19T13:06:02.657656+08:00"
+    "lastSuccessfulFetchAt": "2026-11-20T12:55:30.222688+08:00",
+    "lastAttemptedAt": "2026-11-20T12:55:30.222688+08:00"
   },
   "fear": {
-    "lastAttemptedAt": "2026-11-19T13:06:02.657656+08:00",
+    "lastAttemptedAt": "2026-11-20T12:55:30.222688+08:00",
     "status": "資料來源暫時無法取得"
   }
 }
