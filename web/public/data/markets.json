@@ -1,10 +1,10 @@
 {
   "version": 1,
   "rulesVersion": "research-v1",
-  "generatedAt": "2026-11-21T00:29:40.376846+08:00",
+  "generatedAt": "2026-11-21T12:50:41.418059+08:00",
   "expectedTaiwanSession": "2026-11-20",
   "scheduleText": "亞洲 週一至五 16:00 · 美國 週二至六 08:00（台北時間）",
-  "lastBatch": "asia",
+  "lastBatch": "us",
   "researchSources": true,
   "privateResearch": false,
   "markets": [
@@ -5541,11 +5541,10 @@
       "region": "us",
       "kind": "index",
       "sourceUrl": "https://www.spglobal.com/spdji/en/indices/equity/sp-500/",
-      "sessionDate": "2026-11-19",
-      "close": 7175.830078125,
-      "changePct": -2.02,
+      "sessionDate": "2026-11-20",
+      "close": 6910.39013671875,
+      "changePct": -3.7,
       "sparkline": [
-        7730.990234375,
         7711.759765625,
         7686.14013671875,
         7631.47021484375,
@@ -5604,13 +5603,10 @@
         7416.58984375,
         7340.52978515625,
         7323.6298828125,
-        7175.830078125
+        7175.830078125,
+        6910.39013671875
       ],
       "history": [
-        {
-          "date": "2025-11-19",
-          "close": 6642.16015625
-        },
         {
           "date": "2025-11-20",
           "close": 6538.759765625
@@ -6614,14 +6610,18 @@
         {
           "date": "2026-11-19",
           "close": 7175.830078125
+        },
+        {
+          "date": "2026-11-20",
+          "close": 6910.39013671875
         }
       ],
-      "buyScore": 4.9,
+      "buyScore": 5.3,
       "sellScore": 5.7,
       "confirmed": false,
       "leveraged": false,
       "status": "fresh",
-      "dataCount": 1254,
+      "dataCount": 1255,
       "scoreStatus": "ready",
       "reasons": [
         "長期趨勢與進場節奏綜合觀察"
@@ -6631,49 +6631,49 @@
           "name": "長期均線",
           "buyScore": 5,
           "sellScore": 5,
-          "value": "SMA50 7640.19 · SMA200 7348.02"
+          "value": "SMA50 7625.26 · SMA200 7348.58"
         },
         {
           "name": "高點回落",
-          "buyScore": 6,
+          "buyScore": 8,
           "sellScore": null,
-          "value": "距252日高點 −8.22%"
+          "value": "距252日高點 −11.62%"
         },
         {
           "name": "RSI (14)",
-          "buyScore": 5,
+          "buyScore": 4,
           "sellScore": 5,
-          "value": "RSI 31.41"
+          "value": "RSI 24.69"
         },
         {
           "name": "KD (9, 1/3)",
           "buyScore": 5,
           "sellScore": 6,
-          "value": "K 17.14 · D 29.82"
+          "value": "K 12.62 · D 24.09"
         },
         {
           "name": "布林通道 (20, 2)",
           "buyScore": 4,
           "sellScore": 5,
-          "value": "下軌 7230.61 · 上軌 7839.18"
+          "value": "下軌 7094.35 · 上軌 7904.11"
         },
         {
           "name": "MACD (12, 26, 9)",
           "buyScore": 2,
           "sellScore": 8,
-          "value": "Histogram -33.027"
+          "value": "Histogram -54.595"
         },
         {
           "name": "ADX / DMI (14)",
           "buyScore": null,
           "sellScore": null,
-          "value": "ADX 19.48 · +DI 16.14 · −DI 36.95"
+          "value": "ADX 22.02 · +DI 13.42 · −DI 46.22"
         },
         {
           "name": "ATR 波動率 (14)",
           "buyScore": null,
           "sellScore": null,
-          "value": "ATR / 收盤 1.68%"
+          "value": "ATR / 收盤 1.94%"
         }
       ],
       "cross": null,
@@ -6681,11 +6681,11 @@
       "licenseNote": "Yahoo資料使用條款適用；接入或使用者選擇不代表取得再散布授權。",
       "dataSourceUrl": "https://finance.yahoo.com/",
       "adjustment": "來源調整後OHLC（分割／配息）",
-      "expectedSession": "2026-11-19",
-      "lastSuccessfulFetchAt": "2026-11-20T12:55:30.222688+08:00",
-      "lastAttemptedAt": "2026-11-20T12:55:30.222688+08:00",
+      "expectedSession": "2026-11-20",
+      "lastSuccessfulFetchAt": "2026-11-21T12:50:41.418059+08:00",
+      "lastAttemptedAt": "2026-11-21T12:50:41.418059+08:00",
       "sourceError": null,
-      "nextUpdateAt": "2026-11-21T08:00:00+08:00"
+      "nextUpdateAt": "2026-11-24T08:00:00+08:00"
     },
     {
       "id": "nasdaq",
@@ -6695,11 +6695,10 @@
       "region": "us",
       "kind": "index",
       "sourceUrl": "https://www.nasdaq.com/market-activity/index/comp",
-      "sessionDate": "2026-11-19",
-      "close": 23879.19921875,
-      "changePct": -2.25,
+      "sessionDate": "2026-11-20",
+      "close": 22617.732421875,
+      "changePct": -5.28,
       "sparkline": [
-        26541.349609375,
         26402.419921875,
         26370.890625,
         26099.76953125,
@@ -6758,13 +6757,10 @@
         24509.759765625,
         24328.380859375,
         24429.880859375,
-        23879.19921875
+        23879.19921875,
+        22617.732421875
       ],
       "history": [
-        {
-          "date": "2025-11-19",
-          "close": 22564.23046875
-        },
         {
           "date": "2025-11-20",
           "close": 22078.05078125
@@ -7768,14 +7764,18 @@
         {
           "date": "2026-11-19",
           "close": 23879.19921875
+        },
+        {
+          "date": "2026-11-20",
+          "close": 22617.732421875
         }
       ],
-      "buyScore": 5.5,
+      "buyScore": 5.3,
       "sellScore": 5.7,
       "confirmed": false,
       "leveraged": false,
       "status": "fresh",
-      "dataCount": 1254,
+      "dataCount": 1255,
       "scoreStatus": "ready",
       "reasons": [
         "長期趨勢與進場節奏綜合觀察"
@@ -7785,49 +7785,49 @@
           "name": "長期均線",
           "buyScore": 5,
           "sellScore": 5,
-          "value": "SMA50 26187.75 · SMA200 25157.08"
+          "value": "SMA50 26113.44 · SMA200 25157.46"
         },
         {
           "name": "高點回落",
           "buyScore": 8,
           "sellScore": null,
-          "value": "距252日高點 −13.48%"
+          "value": "距252日高點 −18.05%"
         },
         {
           "name": "RSI (14)",
-          "buyScore": 5,
+          "buyScore": 4,
           "sellScore": 5,
-          "value": "RSI 32.82"
+          "value": "RSI 25.55"
         },
         {
           "name": "KD (9, 1/3)",
           "buyScore": 5,
           "sellScore": 6,
-          "value": "K 20.14 · D 29.90"
+          "value": "K 14.54 · D 24.78"
         },
         {
           "name": "布林通道 (20, 2)",
-          "buyScore": 5,
+          "buyScore": 4,
           "sellScore": 5,
-          "value": "下軌 23780.16 · 上軌 26757.46"
+          "value": "下軌 23253.67 · 上軌 26950.18"
         },
         {
           "name": "MACD (12, 26, 9)",
           "buyScore": 2,
           "sellScore": 8,
-          "value": "Histogram -97.159"
+          "value": "Histogram -186.206"
         },
         {
           "name": "ADX / DMI (14)",
           "buyScore": null,
           "sellScore": null,
-          "value": "ADX 28.88 · +DI 19.50 · −DI 33.08"
+          "value": "ADX 30.03 · +DI 16.46 · −DI 43.41"
         },
         {
           "name": "ATR 波動率 (14)",
           "buyScore": null,
           "sellScore": null,
-          "value": "ATR / 收盤 2.38%"
+          "value": "ATR / 收盤 2.77%"
         }
       ],
       "cross": null,
@@ -7835,11 +7835,11 @@
       "licenseNote": "Yahoo資料使用條款適用；接入或使用者選擇不代表取得再散布授權。",
       "dataSourceUrl": "https://finance.yahoo.com/",
       "adjustment": "來源調整後OHLC（分割／配息）",
-      "expectedSession": "2026-11-19",
-      "lastSuccessfulFetchAt": "2026-11-20T12:55:30.222688+08:00",
-      "lastAttemptedAt": "2026-11-20T12:55:30.222688+08:00",
+      "expectedSession": "2026-11-20",
+      "lastSuccessfulFetchAt": "2026-11-21T12:50:41.418059+08:00",
+      "lastAttemptedAt": "2026-11-21T12:50:41.418059+08:00",
       "sourceError": null,
-      "nextUpdateAt": "2026-11-21T08:00:00+08:00"
+      "nextUpdateAt": "2026-11-24T08:00:00+08:00"
     },
     {
       "id": "kospi",
@@ -10057,12 +10057,12 @@
       "id": "vix",
       "name": "VIX 波動率",
       "label": "市場的心跳",
-      "value": 28.44,
+      "value": 35.89,
       "status": "已收盤",
       "url": "https://www.cboe.com/tradable_products/vix/",
-      "sessionDate": "2026-11-19",
-      "lastSuccessfulFetchAt": "2026-11-20T12:55:30.222688+08:00",
-      "lastAttemptedAt": "2026-11-20T12:55:30.222688+08:00"
+      "sessionDate": "2026-11-20",
+      "lastSuccessfulFetchAt": "2026-11-21T12:50:41.418059+08:00",
+      "lastAttemptedAt": "2026-11-21T12:50:41.418059+08:00"
     },
     {
       "id": "fear",
@@ -10071,7 +10071,7 @@
       "value": null,
       "status": "資料來源暫時無法取得",
       "url": "https://www.cnn.com/markets/fear-and-greed",
-      "lastAttemptedAt": "2026-11-20T12:55:30.222688+08:00"
+      "lastAttemptedAt": "2026-11-21T12:50:41.418059+08:00"
     }
   ],
   "research": {
