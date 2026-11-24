@@ -1,10 +1,10 @@
 {
   "version": 1,
   "rulesVersion": "research-v1",
-  "generatedAt": "2026-11-24T15:39:09.762908+08:00",
+  "generatedAt": "2026-11-25T03:12:23.837755+08:00",
   "expectedTaiwanSession": "2026-11-24",
   "scheduleText": "亞洲 週一至五 16:00 · 美國 週二至六 08:00（台北時間）",
-  "lastBatch": "us",
+  "lastBatch": "asia",
   "researchSources": true,
   "privateResearch": false,
   "markets": [
@@ -16,11 +16,10 @@
       "region": "tw",
       "kind": "index",
       "sourceUrl": "https://www.twse.com.tw/zh/indices/taiex/mi-5min-hist.html",
-      "sessionDate": "2026-11-20",
-      "close": 36033.2890625,
-      "changePct": -6.23,
+      "sessionDate": "2026-11-23",
+      "close": 36811.890625,
+      "changePct": 2.16,
       "sparkline": [
-        44762.3203125,
         45169.4609375,
         45832.62109375,
         45975.21875,
@@ -79,13 +78,10 @@
         40092.109375,
         40194.91015625,
         38426.890625,
-        36033.2890625
+        36033.2890625,
+        36811.890625
       ],
       "history": [
-        {
-          "date": "2025-11-06",
-          "close": 27899.44921875
-        },
         {
           "date": "2025-11-07",
           "close": 27651.41015625
@@ -1089,6 +1085,10 @@
         {
           "date": "2026-11-20",
           "close": 36033.2890625
+        },
+        {
+          "date": "2026-11-23",
+          "close": 36811.890625
         }
       ],
       "buyScore": null,
@@ -1108,10 +1108,10 @@
       "dataSourceUrl": "https://finance.yahoo.com/",
       "adjustment": "來源調整後OHLC（分割／配息）",
       "expectedSession": "2026-11-24",
-      "lastSuccessfulFetchAt": "2026-11-24T03:39:05.671395+08:00",
-      "lastAttemptedAt": "2026-11-24T03:39:05.671395+08:00",
+      "lastSuccessfulFetchAt": "2026-11-25T03:12:23.837755+08:00",
+      "lastAttemptedAt": "2026-11-25T03:12:23.837755+08:00",
       "sourceError": null,
-      "nextUpdateAt": "2026-11-24T16:00:00+08:00"
+      "nextUpdateAt": "2026-11-25T16:00:00+08:00"
     },
     {
       "id": "2330",
@@ -1121,11 +1121,10 @@
       "region": "tw",
       "kind": "stock",
       "sourceUrl": "https://www.twse.com.tw/zh/trading/historical/stock-day.html",
-      "sessionDate": "2026-11-20",
-      "close": 2000.0,
-      "changePct": -4.76,
+      "sessionDate": "2026-11-23",
+      "close": 2030.0,
+      "changePct": 1.5,
       "sparkline": [
-        2392.9560546875,
         2407.912109375,
         2402.9267578125,
         2412.897216796875,
@@ -1184,24 +1183,21 @@
         2170.0,
         2175.0,
         2100.0,
-        2000.0
+        2000.0,
+        2030.0
       ],
       "history": [
         {
-          "date": "2025-11-07",
-          "close": 1442.3125
-        },
-        {
           "date": "2025-11-10",
-          "close": 1457.1307373046875
+          "close": 1457.130859375
         },
         {
           "date": "2025-11-11",
-          "close": 1447.2518310546875
+          "close": 1447.251953125
         },
         {
           "date": "2025-11-12",
-          "close": 1457.1307373046875
+          "close": 1457.130859375
         },
         {
           "date": "2025-11-13",
@@ -1209,7 +1205,7 @@
         },
         {
           "date": "2025-11-14",
-          "close": 1412.676025390625
+          "close": 1412.6759033203125
         },
         {
           "date": "2025-11-17",
@@ -1221,15 +1217,15 @@
         },
         {
           "date": "2025-11-19",
-          "close": 1378.099853515625
+          "close": 1378.10009765625
         },
         {
           "date": "2025-11-20",
-          "close": 1437.3731689453125
+          "close": 1437.373046875
         },
         {
           "date": "2025-11-21",
-          "close": 1368.2210693359375
+          "close": 1368.220947265625
         },
         {
           "date": "2025-11-24",
@@ -1245,7 +1241,7 @@
         },
         {
           "date": "2025-11-27",
-          "close": 1417.615478515625
+          "close": 1417.6153564453125
         },
         {
           "date": "2025-11-28",
@@ -1257,7 +1253,7 @@
         },
         {
           "date": "2025-12-02",
-          "close": 1412.676025390625
+          "close": 1412.6759033203125
         },
         {
           "date": "2025-12-03",
@@ -1277,7 +1273,7 @@
         },
         {
           "date": "2025-12-09",
-          "close": 1462.070068359375
+          "close": 1462.0701904296875
         },
         {
           "date": "2025-12-10",
@@ -2194,6 +2190,10 @@
         {
           "date": "2026-11-20",
           "close": 2000.0
+        },
+        {
+          "date": "2026-11-23",
+          "close": 2030.0
         }
       ],
       "buyScore": null,
@@ -2213,10 +2213,10 @@
       "dataSourceUrl": "https://finance.yahoo.com/",
       "adjustment": "來源調整後OHLC（分割／配息）",
       "expectedSession": "2026-11-24",
-      "lastSuccessfulFetchAt": "2026-11-24T03:39:05.671395+08:00",
-      "lastAttemptedAt": "2026-11-24T03:39:05.671395+08:00",
+      "lastSuccessfulFetchAt": "2026-11-25T03:12:23.837755+08:00",
+      "lastAttemptedAt": "2026-11-25T03:12:23.837755+08:00",
       "sourceError": null,
-      "nextUpdateAt": "2026-11-24T16:00:00+08:00"
+      "nextUpdateAt": "2026-11-25T16:00:00+08:00"
     },
     {
       "id": "0050",
@@ -2294,7 +2294,7 @@
       "history": [
         {
           "date": "2025-11-10",
-          "close": 62.09047317504883
+          "close": 62.09046936035156
         },
         {
           "date": "2025-11-11",
@@ -2302,7 +2302,7 @@
         },
         {
           "date": "2025-11-12",
-          "close": 61.94345474243164
+          "close": 61.943450927734375
         },
         {
           "date": "2025-11-13",
@@ -2370,7 +2370,7 @@
         },
         {
           "date": "2025-12-05",
-          "close": 61.502403259277344
+          "close": 61.50239944458008
         },
         {
           "date": "2025-12-08",
@@ -2386,7 +2386,7 @@
         },
         {
           "date": "2025-12-11",
-          "close": 62.09047317504883
+          "close": 62.09046936035156
         },
         {
           "date": "2025-12-12",
@@ -2394,11 +2394,11 @@
         },
         {
           "date": "2025-12-15",
-          "close": 61.5514030456543
+          "close": 61.55140686035156
         },
         {
           "date": "2025-12-16",
-          "close": 61.0123405456543
+          "close": 61.01234436035156
         },
         {
           "date": "2025-12-17",
@@ -2410,7 +2410,7 @@
         },
         {
           "date": "2025-12-19",
-          "close": 61.25737380981445
+          "close": 61.25736999511719
         },
         {
           "date": "2025-12-22",
@@ -2426,11 +2426,11 @@
         },
         {
           "date": "2025-12-26",
-          "close": 63.119598388671875
+          "close": 63.11959457397461
         },
         {
           "date": "2025-12-29",
-          "close": 63.952693939208984
+          "close": 63.95269775390625
         },
         {
           "date": "2025-12-30",
@@ -2466,7 +2466,7 @@
         },
         {
           "date": "2026-01-12",
-          "close": 68.95130157470703
+          "close": 68.9512939453125
         },
         {
           "date": "2026-01-13",
@@ -2478,11 +2478,11 @@
         },
         {
           "date": "2026-01-15",
-          "close": 69.24533081054688
+          "close": 69.2453384399414
         },
         {
           "date": "2026-01-16",
-          "close": 70.56849670410156
+          "close": 70.56848907470703
         },
         {
           "date": "2026-01-19",
@@ -3306,7 +3306,7 @@
       "confirmed": false,
       "leveraged": false,
       "status": "stale",
-      "dataCount": 1213,
+      "dataCount": 1212,
       "scoreStatus": "warming",
       "reasons": [
         "行情尚未更新至最近完整交易日"
@@ -3318,10 +3318,10 @@
       "dataSourceUrl": "https://finance.yahoo.com/",
       "adjustment": "來源調整後OHLC（分割／配息）",
       "expectedSession": "2026-11-24",
-      "lastSuccessfulFetchAt": "2026-11-24T03:39:05.671395+08:00",
-      "lastAttemptedAt": "2026-11-24T03:39:05.671395+08:00",
+      "lastSuccessfulFetchAt": "2026-11-25T03:12:23.837755+08:00",
+      "lastAttemptedAt": "2026-11-25T03:12:23.837755+08:00",
       "sourceError": null,
-      "nextUpdateAt": "2026-11-24T16:00:00+08:00"
+      "nextUpdateAt": "2026-11-25T16:00:00+08:00"
     },
     {
       "id": "00631L",
@@ -4411,7 +4411,7 @@
       "confirmed": false,
       "leveraged": true,
       "status": "stale",
-      "dataCount": 1213,
+      "dataCount": 1212,
       "scoreStatus": "warming",
       "reasons": [
         "行情尚未更新至最近完整交易日"
@@ -4423,10 +4423,10 @@
       "dataSourceUrl": "https://finance.yahoo.com/",
       "adjustment": "來源調整後OHLC（分割／配息）",
       "expectedSession": "2026-11-24",
-      "lastSuccessfulFetchAt": "2026-11-24T03:39:05.671395+08:00",
-      "lastAttemptedAt": "2026-11-24T03:39:05.671395+08:00",
+      "lastSuccessfulFetchAt": "2026-11-25T03:12:23.837755+08:00",
+      "lastAttemptedAt": "2026-11-25T03:12:23.837755+08:00",
       "sourceError": null,
-      "nextUpdateAt": "2026-11-24T16:00:00+08:00"
+      "nextUpdateAt": "2026-11-25T16:00:00+08:00"
     },
     {
       "id": "00685L",
@@ -5516,7 +5516,7 @@
       "confirmed": false,
       "leveraged": true,
       "status": "stale",
-      "dataCount": 1213,
+      "dataCount": 1212,
       "scoreStatus": "warming",
       "reasons": [
         "行情尚未更新至最近完整交易日"
@@ -5528,10 +5528,10 @@
       "dataSourceUrl": "https://finance.yahoo.com/",
       "adjustment": "來源調整後OHLC（分割／配息）",
       "expectedSession": "2026-11-24",
-      "lastSuccessfulFetchAt": "2026-11-24T03:39:05.671395+08:00",
-      "lastAttemptedAt": "2026-11-24T03:39:05.671395+08:00",
+      "lastSuccessfulFetchAt": "2026-11-25T03:12:23.837755+08:00",
+      "lastAttemptedAt": "2026-11-25T03:12:23.837755+08:00",
       "sourceError": null,
-      "nextUpdateAt": "2026-11-24T16:00:00+08:00"
+      "nextUpdateAt": "2026-11-25T16:00:00+08:00"
     },
     {
       "id": "sp500",
@@ -7849,11 +7849,10 @@
       "region": "asia",
       "kind": "index",
       "sourceUrl": "https://global.krx.co.kr/",
-      "sessionDate": "2026-11-20",
-      "close": 4869.9599609375,
-      "changePct": -5.21,
+      "sessionDate": "2026-11-23",
+      "close": 4708.5400390625,
+      "changePct": -3.31,
       "sparkline": [
-        6742.740234375,
         6808.2099609375,
         6912.3701171875,
         6788.8798828125,
@@ -7912,13 +7911,10 @@
         4968.47998046875,
         5067.43994140625,
         5137.89013671875,
-        4869.9599609375
+        4869.9599609375,
+        4708.5400390625
       ],
       "history": [
-        {
-          "date": "2025-11-11",
-          "close": 4106.39013671875
-        },
         {
           "date": "2025-11-12",
           "close": 4150.39013671875
@@ -8922,6 +8918,10 @@
         {
           "date": "2026-11-20",
           "close": 4869.9599609375
+        },
+        {
+          "date": "2026-11-23",
+          "close": 4708.5400390625
         }
       ],
       "buyScore": null,
@@ -8941,10 +8941,10 @@
       "dataSourceUrl": "https://finance.yahoo.com/",
       "adjustment": "來源調整後OHLC（分割／配息）",
       "expectedSession": "2026-11-24",
-      "lastSuccessfulFetchAt": "2026-11-24T03:39:05.671395+08:00",
-      "lastAttemptedAt": "2026-11-24T03:39:05.671395+08:00",
+      "lastSuccessfulFetchAt": "2026-11-25T03:12:23.837755+08:00",
+      "lastAttemptedAt": "2026-11-25T03:12:23.837755+08:00",
       "sourceError": null,
-      "nextUpdateAt": "2026-11-24T16:00:00+08:00"
+      "nextUpdateAt": "2026-11-25T16:00:00+08:00"
     },
     {
       "id": "nikkei",
@@ -10034,7 +10034,7 @@
       "confirmed": false,
       "leveraged": false,
       "status": "stale",
-      "dataCount": 1221,
+      "dataCount": 1220,
       "scoreStatus": "warming",
       "reasons": [
         "行情尚未更新至最近完整交易日"
@@ -10046,10 +10046,10 @@
       "dataSourceUrl": "https://finance.yahoo.com/",
       "adjustment": "來源調整後OHLC（分割／配息）",
       "expectedSession": "2026-11-24",
-      "lastSuccessfulFetchAt": "2026-11-24T03:39:05.671395+08:00",
-      "lastAttemptedAt": "2026-11-24T03:39:05.671395+08:00",
+      "lastSuccessfulFetchAt": "2026-11-25T03:12:23.837755+08:00",
+      "lastAttemptedAt": "2026-11-25T03:12:23.837755+08:00",
       "sourceError": null,
-      "nextUpdateAt": "2026-11-24T16:00:00+08:00"
+      "nextUpdateAt": "2026-11-25T16:00:00+08:00"
     }
   ],
   "sentiment": [
