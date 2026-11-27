@@ -1,10 +1,10 @@
 {
   "version": 1,
   "rulesVersion": "research-v1",
-  "generatedAt": "2026-11-27T01:57:59.611573+08:00",
-  "expectedTaiwanSession": "2026-11-26",
+  "generatedAt": "2026-11-27T13:53:28.950118+08:00",
+  "expectedTaiwanSession": "2026-11-27",
   "scheduleText": "亞洲 週一至五 16:00 · 美國 週二至六 08:00（台北時間）",
-  "lastBatch": "asia",
+  "lastBatch": "us",
   "researchSources": true,
   "privateResearch": false,
   "markets": [
@@ -1107,7 +1107,7 @@
       "licenseNote": "Yahoo資料使用條款適用；接入或使用者選擇不代表取得再散布授權。",
       "dataSourceUrl": "https://finance.yahoo.com/",
       "adjustment": "來源調整後OHLC（分割／配息）",
-      "expectedSession": "2026-11-26",
+      "expectedSession": "2026-11-27",
       "lastSuccessfulFetchAt": "2026-11-27T01:57:59.611573+08:00",
       "lastAttemptedAt": "2026-11-27T01:57:59.611573+08:00",
       "sourceError": null,
@@ -2212,7 +2212,7 @@
       "licenseNote": "Yahoo資料使用條款適用；接入或使用者選擇不代表取得再散布授權。",
       "dataSourceUrl": "https://finance.yahoo.com/",
       "adjustment": "來源調整後OHLC（分割／配息）",
-      "expectedSession": "2026-11-26",
+      "expectedSession": "2026-11-27",
       "lastSuccessfulFetchAt": "2026-11-27T01:57:59.611573+08:00",
       "lastAttemptedAt": "2026-11-27T01:57:59.611573+08:00",
       "sourceError": null,
@@ -3317,7 +3317,7 @@
       "licenseNote": "Yahoo資料使用條款適用；接入或使用者選擇不代表取得再散布授權。",
       "dataSourceUrl": "https://finance.yahoo.com/",
       "adjustment": "來源調整後OHLC（分割／配息）",
-      "expectedSession": "2026-11-26",
+      "expectedSession": "2026-11-27",
       "lastSuccessfulFetchAt": "2026-11-27T01:57:59.611573+08:00",
       "lastAttemptedAt": "2026-11-27T01:57:59.611573+08:00",
       "sourceError": null,
@@ -4422,7 +4422,7 @@
       "licenseNote": "Yahoo資料使用條款適用；接入或使用者選擇不代表取得再散布授權。",
       "dataSourceUrl": "https://finance.yahoo.com/",
       "adjustment": "來源調整後OHLC（分割／配息）",
-      "expectedSession": "2026-11-26",
+      "expectedSession": "2026-11-27",
       "lastSuccessfulFetchAt": "2026-11-27T01:57:59.611573+08:00",
       "lastAttemptedAt": "2026-11-27T01:57:59.611573+08:00",
       "sourceError": null,
@@ -5527,7 +5527,7 @@
       "licenseNote": "Yahoo資料使用條款適用；接入或使用者選擇不代表取得再散布授權。",
       "dataSourceUrl": "https://finance.yahoo.com/",
       "adjustment": "來源調整後OHLC（分割／配息）",
-      "expectedSession": "2026-11-26",
+      "expectedSession": "2026-11-27",
       "lastSuccessfulFetchAt": "2026-11-27T01:57:59.611573+08:00",
       "lastAttemptedAt": "2026-11-27T01:57:59.611573+08:00",
       "sourceError": null,
@@ -6682,10 +6682,10 @@
       "dataSourceUrl": "https://finance.yahoo.com/",
       "adjustment": "來源調整後OHLC（分割／配息）",
       "expectedSession": "2026-11-25",
-      "lastSuccessfulFetchAt": "2026-11-26T13:59:47.140290+08:00",
-      "lastAttemptedAt": "2026-11-26T13:59:47.140290+08:00",
+      "lastSuccessfulFetchAt": "2026-11-27T13:53:28.950118+08:00",
+      "lastAttemptedAt": "2026-11-27T13:53:28.950118+08:00",
       "sourceError": null,
-      "nextUpdateAt": "2026-11-27T08:00:00+08:00"
+      "nextUpdateAt": "2026-11-28T08:00:00+08:00"
     },
     {
       "id": "nasdaq",
@@ -7836,10 +7836,10 @@
       "dataSourceUrl": "https://finance.yahoo.com/",
       "adjustment": "來源調整後OHLC（分割／配息）",
       "expectedSession": "2026-11-25",
-      "lastSuccessfulFetchAt": "2026-11-26T13:59:47.140290+08:00",
-      "lastAttemptedAt": "2026-11-26T13:59:47.140290+08:00",
+      "lastSuccessfulFetchAt": "2026-11-27T13:53:28.950118+08:00",
+      "lastAttemptedAt": "2026-11-27T13:53:28.950118+08:00",
       "sourceError": null,
-      "nextUpdateAt": "2026-11-27T08:00:00+08:00"
+      "nextUpdateAt": "2026-11-28T08:00:00+08:00"
     },
     {
       "id": "kospi",
@@ -10061,8 +10061,8 @@
       "status": "已收盤",
       "url": "https://www.cboe.com/tradable_products/vix/",
       "sessionDate": "2026-11-25",
-      "lastSuccessfulFetchAt": "2026-11-26T13:59:47.140290+08:00",
-      "lastAttemptedAt": "2026-11-26T13:59:47.140290+08:00"
+      "lastSuccessfulFetchAt": "2026-11-27T13:53:28.950118+08:00",
+      "lastAttemptedAt": "2026-11-27T13:53:28.950118+08:00"
     },
     {
       "id": "fear",
@@ -10071,7 +10071,7 @@
       "value": null,
       "status": "資料來源暫時無法取得",
       "url": "https://www.cnn.com/markets/fear-and-greed",
-      "lastAttemptedAt": "2026-11-26T13:59:47.140290+08:00"
+      "lastAttemptedAt": "2026-11-27T13:53:28.950118+08:00"
     }
   ],
   "research": {
